@@ -1,0 +1,558 @@
+{
+   "nav": {
+    "intro": "Introdução",
+    "retos": "Desafios",
+    "ia": "Assistente IA",
+    "info": "Informação",
+    "logros": "Conquistas",
+    "comunidad": "Comunidade"
+  },
+
+  "header": {
+    "title": "Conéctate",
+    "subtitle": "Fortaleça a relação entre padrastos/madrastas e filhos",
+    "logout": "Sair",
+    "welcome": "Bem-vindo, {{email}}!"
+  },
+  
+  "intro": {
+    "welcome_title": "Bem-vindo ao Conéctate",
+    "welcome_text": "Ser padrasto ou madrasta é uma jornada cheia de amor, paciência e desafios únicos. Você não está sozinho nisso.",
+    "guide_title": "Seu Guia de Conexão",
+    "guide_text": "Vamos guiá-lo por etapas simples para construir um vínculo forte e amoroso.",
+    "how_works_title": "Como Funciona",
+    "ready_title": "Você está pronto?",
+    "ready_text": "Vamos começar juntos essa linda jornada.",
+    "previous": "Anterior",
+    "next": "Próximo",
+    "start": "Vamos lá!"
+  },
+  "retos": {
+    "title": "Desafios",
+    "button_start": "Iniciar",
+    "button_hide": "Ocultar",
+    "button_completed": "Concluído",
+    "button_locked": "Bloqueado"
+  },
+  "ia": {
+  "title": "Assistente de IA",
+  "description": "Pergunte o que quiser. Estou aqui para oferecer conselhos personalizados com base no que você me contou sobre seu enteado.",
+  "usage_display": "Tokens usados hoje: {{today}} / {{limit}}",
+  "some_text": "Digite sua pergunta aqui e o assistente de IA dará uma resposta.",
+  "placeholder": "Exemplo: Como posso me aproximar mais do meu enteado?",
+  "button": "Consultar IA",
+  "thinking": "Pensando...",
+  "response_title": "Resposta da IA",
+  "clear": "Limpar",
+  "copy_response": "Copiar resposta",
+  "ask_another": "Fazer outra pergunta",
+  "characters": "caracteres",
+  "press_ctrl_enter": "Pressione Ctrl+Enter para enviar",
+  "remaining_tokens": "Você ainda tem {{remaining}} tokens disponíveis",
+  "near_limit": "Você está perto do limite diário",
+  "error_overloaded": "O serviço de IA está temporariamente sobrecarregado. Aguarde um momento e tente novamente.",
+  "query_label": "Sua consulta"
+
+},
+  "info": {
+    "title": "Teste de Conexão",
+    "description": "Quanto mais você conhece seu enteado, mais personalizados serão os conselhos da nossa IA. Não existem respostas certas ou erradas!",
+    "placeholder": "Seja o mais específico possível..."
+  },
+  "logros": {
+    "title": "Meu Mural de Vitórias",
+    "description": "Aqui você pode salvar cada momento especial, cada pequena conquista que fortalece seu vínculo.",
+    "add_button": "+ Adicionar Nova Vitória",
+    "empty_state": "Nenhuma vitória registrada ainda. Adicione seu primeiro grande momento!",
+    "modal_title": "Registrar Nova Vitória",
+    "form_label": "Conte-nos sobre o seu momento:",
+    "form_placeholder": "Exemplo: Hoje ele finalmente me abraçou sem eu pedir...",
+    "image_label": "Adicionar uma imagem (opcional)",
+    "cancel_button": "Cancelar",
+    "save_button": "Salvar Vitória",
+    "delete_button": "Excluir Conquista",
+    "confirm_delete": "Tem certeza de que deseja excluir esta conquista?"
+  },
+  "comunidad": {
+    "title": "Em breve: Nossa Comunidade",
+    "description": "Estamos criando um espaço seguro e acolhedor onde padrastos e madrastas de todo o mundo possam compartilhar experiências, aprender e crescer juntos.",
+    "ready_title": "Receber Notificações!"
+  },
+  "howItWorks": {
+  "title": "Como Funciona?",
+  "step1": {
+    "title": "Crie seu Perfil",
+    "desc": "Cadastre-se e conte um pouco sobre você e seu enteado. Essas informações nos ajudam a personalizar sua experiência."
+  },
+  "step2": {
+    "title": "Complete os Desafios",
+    "desc": "Explore nossa lista de atividades feitas para fortalecer o vínculo entre vocês. Marque cada etapa conforme concluir."
+  },
+  "step3": {
+    "title": "Consulte a IA",
+    "desc": "Se você enfrentar um desafio, pergunte ao nosso assistente de IA, treinado com os melhores livros sobre parentalidade e famílias reconstituídas."
+  }
+},
+  "quotes": {
+  "title": "Sabedoria de Especialistas",
+  "lofas": {
+    "author": "Jeannette Lofas",
+    "text1": "A família reconstituída não é uma família quebrada, é uma nova família. Requer novas regras, novos papéis e novos relacionamentos.",
+    "book1": "\"Winning the Heart of Your Stepchild\"",
+    "text2": "Ser padrasto ou madrasta é o trabalho mais difícil do mundo, mas também pode ser o mais gratificante.",
+    "book2": "\"7 Steps to Bonding With Your Stepchild\""
+  }
+},
+ "login": {
+    "title": "Entrar",
+    "button": "Acessar",
+    "no_account": "Ainda não tem uma conta?",
+    "register_link": "Registre-se aqui",
+    "email_placeholder": "Insira seu email",
+    "password_placeholder": "Insira sua senha",
+    "email_label": "Email",
+    "password_label": "Senha",
+    "forgot_password": "Esqueceu sua senha?"
+  },
+  "register": {
+    "title": "Criar Conta",
+    "button": "Cadastrar",
+    "have_account": "Já tem uma conta?",
+    "login_link": "Entre aqui",
+    "email_placeholder": "Insira seu email",
+    "password_placeholder": "Crie uma senha segura",
+    "email_label": "Email",
+    "password_label": "Senha",
+    "password_confirm_label": "Confirmar Senha",
+    "password_mismatch": "As senhas não coincidem."
+  },
+  "registrationSuccess": {
+  "title": "Confira Seu E-mail!",
+  "message": "Enviamos um link de confirmação. Por favor, verifique sua caixa de entrada (e a pasta de spam) para ativar sua conta.",
+  "goToLogin": "Ir para a Página de Login"
+},
+  "forgotPassword": {
+  "title": "Redefinir Senha",
+  "label": "Digite seu e-mail",
+  "button": "Enviar link de redefinição",
+  "success": "Confira seu e-mail! Enviamos um link para você redefinir sua senha.",
+  "backToLogin": "Voltar ao login"
+},
+"general": {
+  "loading": "Enviando..."
+},
+  "data": {
+  "retos": [
+    {
+      "id": 1,
+      "titulo": "Desafio 1: A Primeira Conexão",
+      "desc": "Pequenos gestos para quebrar o gelo.",
+      "color": "bg-blue-100",
+      "locked": false,
+      "pasos": [
+        { "id": 1, "texto": "Cumprimente-o(a) com um sorriso todas as manhãs, sem esperar nada em troca.", "completado": false },
+        { "id": 2, "texto": "Pergunte como foi o dia dele(a) e ouça com atenção por pelo menos 2 minutos.", "completado": false },
+        { "id": 3, "texto": "Encontre algo sincero para elogiar (as roupas, um desenho, a forma como ajudou).", "completado": false }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "Desafio 2: Conectando-se Através da Comida",
+      "desc": "A cozinha é um ótimo lugar para criar laços.",
+      "color": "bg-green-100",
+      "locked": true,
+      "pasos": [
+        { "id": 1, "texto": "Pergunte qual é o prato preferido dele(a) que você cozinha em casa.", "completado": false },
+        { "id": 2, "texto": "Convide-o(a) para cozinhar esse prato favorito juntos esta semana.", "completado": false },
+        { "id": 3, "texto": "Durante a refeição, desliguem o celular e a TV e aproveitem o momento juntos.", "completado": false }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "Desafio 3: 30 Minutos de Tempo de Qualidade",
+      "desc": "Dedique um tempo exclusivo, sem distrações.",
+      "color": "bg-pink-100",
+      "locked": true,
+      "pasos": [
+        { "id": 1, "texto": "Pergunte qual atividade ele(a) gostaria de fazer com você por 30 minutos.", "completado": false },
+        { "id": 2, "texto": "Agende esse momento no seu calendário como um compromisso importante.", "completado": false },
+        { "id": 3, "texto": "Durante esses 30 minutos, dê total atenção a ele(a) (sem celular).", "completado": false }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "Desafio 4: O Poder de um Presente Simples",
+      "desc": "Um gesto que diz 'pensei em você'.",
+      "color": "bg-purple-100",
+      "locked": true,
+      "pasos": [
+        { "id": 1, "texto": "Preste atenção em algo que ele(a) disse que quer ou precisa (um lápis, uma HQ, etc.).", "completado": false },
+        { "id": 2, "texto": "Durante a semana, dê esse pequeno presente sem nenhum motivo especial.", "completado": false },
+        { "id": 3, "texto": "Ao entregar, diga simplesmente: 'Isso me fez lembrar de você.'", "completado": false }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "Desafio 5: Explorando o Mundo Dele(a)",
+      "desc": "Mostre interesse genuíno pelas paixões dele(a).",
+      "color": "bg-yellow-100",
+      "locked": true,
+      "pasos": [
+        { "id": 1, "texto": "Peça para ele(a) te mostrar seu videogame, passatempo ou hobby favorito.", "completado": false },
+        { "id": 2, "texto": "Deixe que ele(a) explique as regras ou como funciona.", "completado": false },
+        { "id": 3, "texto": "Jogue ou participe com ele(a) por pelo menos 20 minutos.", "completado": false }
+      ]
+    },
+    {
+      "id": 6,
+      "titulo": "Desafio 6: Noite de Cinema em Casa",
+      "desc": "Crie uma experiência especial e compartilhada.",
+      "color": "bg-indigo-100",
+      "locked": true,
+      "pasos": [
+        { "id": 1, "texto": "Escolham juntos um filme ou série que ambos gostem.", "completado": false },
+        { "id": 2, "texto": "Prepare pipoca ou o lanche favorito dele(a).", "completado": false },
+        { "id": 3, "texto": "Apaguem as luzes e curtam o 'cinema' como se fosse um evento de verdade.", "completado": false }
+      ]
+    },
+    {
+      "id": 7,
+      "titulo": "Desafio 7: O Diário de Conversa",
+      "desc": "Crie um espaço seguro para se comunicar.",
+      "color": "bg-red-100",
+      "locked": true,
+      "pasos": [
+        { "id": 1, "texto": "Compre um caderno bonito e explique que é um 'diário secreto' só de vocês dois.", "completado": false },
+        { "id": 2, "texto": "Escreva a primeira entrada sobre um bom momento que passaram juntos.", "completado": false },
+        { "id": 3, "texto": "Deixe-o no quarto dele(a) para que leia e responda quando quiser.", "completado": false }
+      ]
+    },
+    {
+      "id": 8,
+      "titulo": "Desafio 8: Aprender Algo Novo Juntos",
+      "desc": "Um desafio compartilhado fortalece a conexão.",
+      "color": "bg-teal-100",
+      "locked": true,
+      "pasos": [
+        { "id": 1, "texto": "Encontrem um tutorial no YouTube sobre algo que interesse a ambos (um truque de mágica, uma receita simples, etc.).", "completado": false },
+        { "id": 2, "texto": "Passem um tempo praticando juntos, rindo dos erros.", "completado": false },
+        { "id": 3, "texto": "Mostrem o resultado à família ou guardem só para vocês.", "completado": false }
+      ]
+    },
+    {
+      "id": 9,
+      "titulo": "Desafio 9: O Elogio Específico",
+      "desc": "Vá além do simples 'bom trabalho'.",
+      "color": "bg-orange-100",
+      "locked": true,
+      "pasos": [
+        { "id": 1, "texto": "Durante o dia, observe algo que ele(a) faz bem (fazer o dever de casa, ajudar um irmão).", "completado": false },
+        { "id": 2, "texto": "Em vez de dizer 'bom trabalho', diga algo específico: 'Admiro como você se concentrou nesse problema de matemática.'", "completado": false },
+        { "id": 3, "texto": "Observe a reação dele(a) a um elogio tão atencioso.", "completado": false }
+      ]
+    },
+    {
+      "id": 10,
+      "titulo": "Desafio 10: Um Cartão de 'Obrigado por Estar Aqui'",
+      "desc": "Reconheça a presença dele(a) na sua vida.",
+      "color": "bg-cyan-100",
+      "locked": true,
+      "pasos": [
+        { "id": 1, "texto": "Compre um cartão ou faça um você mesmo.", "completado": false },
+        { "id": 2, "texto": "Escreva uma mensagem sincera sobre o quanto está feliz por ele(a) fazer parte da família.", "completado": false },
+        { "id": 3, "texto": "Deixe-o no travesseiro ou na mochila dele(a) para que encontre.", "completado": false }
+      ]
+    },
+    {
+  "id": 11,
+  "titulo": "Desafio 11: Planejar uma Pequena Aventura",
+  "desc": "Criar uma lembrança inesquecível.",
+  "color": "bg-lime-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Pesquisem um lugar próximo que nenhum dos dois tenha visitado (um parque, um pequeno museu, uma cafeteria).", "completado": false },
+    { "id": 2, "texto": "Planejem juntos a 'viagem': como chegar e o que farão lá.", "completado": false },
+    { "id": 3, "texto": "Vivam a aventura! Tirem fotos para lembrar o dia.", "completado": false }
+  ]
+},
+{
+  "id": 12,
+  "titulo": "Desafio 12: Hora do Esporte",
+  "desc": "Compartilhar a paixão pelo esporte.",
+  "color": "bg-emerald-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Convide-o(a) para jogar ou praticar seu esporte favorito (mesmo que seja apenas jogar bola no parque).", "completado": false },
+    { "id": 2, "texto": "Incentive e comemore suas conquistas, por menores que sejam.", "completado": false },
+    { "id": 3, "texto": "Se você não gosta de esportes, proponha uma caminhada ou corrida juntos enquanto ouvem música.", "completado": false }
+  ]
+},
+{
+  "id": 13,
+  "titulo": "Desafio 13: Noite de Construção com Blocos",
+  "desc": "Estimular a criatividade e o trabalho em equipe.",
+  "color": "bg-fuchsia-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Peguem LEGOs, blocos de montar ou até papelão e fita adesiva.", "completado": false },
+    { "id": 2, "texto": "Proponha um desafio: 'vamos construir a casa mais alta' ou 'um castelo para os brinquedos'.", "completado": false },
+    { "id": 3, "texto": "Trabalhem juntos no projeto, sem se importar com o resultado final.", "completado": false }
+  ]
+},
+{
+  "id": 14,
+  "titulo": "Desafio 14: Ler um Capítulo Juntos",
+  "desc": "O poder de compartilhar uma história.",
+  "color": "bg-rose-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Deixe que ele/ela escolha um livro de que goste (mesmo que seja um gibi).", "completado": false },
+    { "id": 2, "texto": "Sente-se em um lugar confortável e leiam um capítulo em voz alta, revezando-se.", "completado": false },
+    { "id": 3, "texto": "No final, conversem sobre o que acharam da história ou o que acham que vai acontecer depois.", "completado": false }
+  ]
+},
+{
+  "id": 15,
+  "titulo": "Desafio 15: Criar uma Playlist Conjunta",
+  "desc": "A trilha sonora do relacionamento.",
+  "color": "bg-violet-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Cada um escolhe 3 músicas que goste ou que tragam boas lembranças.", "completado": false },
+    { "id": 2, "texto": "Juntem todas as músicas em uma única playlist no Spotify ou YouTube.", "completado": false },
+    { "id": 3, "texto": "Ouçam a playlist no carro ou em casa enquanto fazem outra atividade.", "completado": false }
+  ]
+},
+{
+  "id": 16,
+  "titulo": "Desafio 16: Falar Sobre Sentimentos (Versão Leve)",
+  "desc": "Praticar a vulnerabilidade de forma segura.",
+  "color": "bg-sky-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Comece uma conversa com: 'Às vezes me sinto um pouco [triste/nervoso] quando...', compartilhando algo seu.", "completado": false },
+    { "id": 2, "texto": "Pergunte se ele/ela já se sentiu assim alguma vez.", "completado": false },
+    { "id": 3, "texto": "Ouça sem julgar e apenas valide o sentimento: 'entendo que você se sinta assim'.", "completado": false }
+  ]
+},
+{
+  "id": 17,
+  "titulo": "Desafio 17: O Dia do 'Sim'",
+  "desc": "Um dia para dizer 'sim' para tudo (dentro do razoável).",
+  "color": "bg-amber-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Anuncie que, por um dia, você tentará dizer 'sim' às propostas dele/dela (dentro de limites seguros e razoáveis).", "completado": false },
+    { "id": 2, "texto": "Quando pedir algo (brincar, tomar sorvete), diga 'sim!' com entusiasmo.", "completado": false },
+    { "id": 3, "texto": "No final do dia, conversem sobre como foi divertido ter um dia do 'sim'.", "completado": false }
+  ]
+},
+{
+  "id": 18,
+  "titulo": "Desafio 18: Missão Compartilhada",
+  "desc": "Fortalecer a conexão por meio de uma tarefa em equipe.",
+  "color": "bg-amber-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Escolham uma pequena missão para fazer juntos: consertar algo, cozinhar, cuidar de uma planta ou ajudar em uma tarefa simples.", "completado": false },
+    { "id": 2, "texto": "Enquanto realizam a tarefa, conversem apenas o necessário e deixem que o trabalho em equipe fale por si só.", "completado": false },
+    { "id": 3, "texto": "Ao terminar, celebrem o resultado de alguma forma: tirem uma foto, contem uma piada ou deem uma pequena recompensa simbólica.", "completado": false }
+  ]
+},
+{
+  "id": 19,
+  "titulo": "Desafio 19: Visitar um Lugar da Sua Infância",
+  "desc": "Compartilhar uma parte da sua história.",
+  "color": "bg-neutral-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Leve-o(a) a um lugar que foi importante para você na infância (sua escola, um parque onde brincava).", "completado": false },
+    { "id": 2, "texto": "Conte uma história pessoal sobre o que fazia nesse lugar.", "completado": false },
+    { "id": 3, "texto": "Pergunte se há algum lugar importante para ele/ela que você gostaria de conhecer.", "completado": false }
+  ]
+},
+{
+  "id": 20,
+  "titulo": "Desafio 20: Escrever uma Carta para o Futuro",
+  "desc": "Sonhar juntos e fortalecer o vínculo a longo prazo.",
+  "color": "bg-zinc-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Sentem-se juntos e escrevam uma carta para o 'eu' de daqui a um ano.", "completado": false },
+    { "id": 2, "texto": "Cada um deve escrever sobre o que espera que aconteça nesse ano (uma viagem, uma conquista etc.).", "completado": false },
+    { "id": 3, "texto": "Guardem as cartas em um envelope e prometam abri-las juntos na mesma data do próximo ano.", "completado": false }
+  ]
+},
+{
+  "id": 21,
+  "titulo": "Desafio 21: Criar uma Lista de Filmes Conjunta",
+  "desc": "Um projeto de longo prazo para compartilhar gostos e criar tradições.",
+  "color": "bg-indigo-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Cada um escreve em um papel 3 filmes que adoraria assistir.", "completado": false },
+    { "id": 2, "texto": "Reúnam-se e leiam suas listas, procurando coincidências.", "completado": false },
+    { "id": 3, "texto": "Escolham os 3 filmes com mais coincidências e adicionem à lista principal.", "completado": false }
+  ]
+},
+{
+  "id": 22,
+  "titulo": "Desafio 22: Noite de Jogos de Mesa",
+  "desc": "Desconectar das telas para se conectar de forma analógica.",
+  "color": "bg-purple-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Escolham um jogo de mesa que ambos gostem (cartas, dados, etc.).", "completado": false },
+    { "id": 2, "texto": "Preparem alguns petiscos e bebidas para a noite de jogos.", "completado": false },
+    { "id": 3, "texto": "Joguem por pelo menos uma hora, sem distrações digitais.", "completado": false }
+  ]
+},
+{
+  "id": 23,
+  "titulo": "Desafio 23: Um Dia Sem Críticas",
+  "desc": "Praticar a paciência e criar um espaço seguro para a expressão.",
+  "color": "bg-pink-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Por um dia inteiro, façam um pacto para não criticar nem corrigir nada.", "completado": false },
+    { "id": 2, "texto": "Se alguém errar, apenas sorria e siga em frente.", "completado": false },
+    { "id": 3, "texto": "No final do dia, conversem sobre como se sentiram.", "completado": false }
+  ]
+},
+{
+  "id": 24,
+  "titulo": "Desafio 24: Ensinar Algo Novo",
+  "desc": "Trocar papéis e deixar que o outro seja o professor por um dia.",
+  "color": "bg-yellow-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Pergunte o que ele gostaria de te ensinar.", "completado": false },
+    { "id": 2, "texto": "Dedique tempo para aprender com paciência e entusiasmo.", "completado": false },
+    { "id": 3, "texto": "Agradeça sinceramente pela lição, por mais simples que seja.", "completado": false }
+  ]
+},
+{
+  "id": 25,
+  "titulo": "Desafio 25: Criar um Código Secreto de Amizade",
+  "desc": "Um símbolo especial que apenas vocês conhecem para fortalecer o vínculo.",
+  "color": "bg-green-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Inventem um gesto ou palavra secreta (ex: tocar o nariz).", "completado": false },
+    { "id": 2, "texto": "Usem-no em público para se comunicar sem que os outros entendam.", "completado": false },
+    { "id": 3, "texto": "Transformem isso em um pequeno ritual de cumplicidade.", "completado": false }
+  ]
+},
+{
+  "id": 26,
+  "titulo": "Desafio 26: Planejar uma Surpresa Futura",
+  "desc": "Olhar para o futuro e planejar algo emocionante juntos.",
+  "color": "bg-blue-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Conversem sobre um lugar que gostariam de visitar juntos.", "completado": false },
+    { "id": 2, "texto": "Pesquisem sobre o lugar (custos, atividades, etc.).", "completado": false },
+    { "id": 3, "texto": "Criem um 'fundo de férias' em um pote e escolham uma data.", "completado": false }
+  ]
+},
+{
+  "id": 27,
+  "titulo": "Desafio 27: Escrever uma Carta de Agradecimento",
+  "desc": "Expressar gratidão por escrito tem um poder incrível.",
+  "color": "bg-red-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Cada um escreve uma carta de agradecimento para o outro.", "completado": false },
+    { "id": 2, "texto": "Leiam suas cartas em voz alta em um lugar tranquilo.", "completado": false },
+    { "id": 3, "texto": "Guardem as cartas como lembrança desse momento especial.", "completado": false }
+  ]
+},
+{
+  "id": 28,
+  "titulo": "Desafio 28: Construir um Forte de Almofadas",
+  "desc": "Um projeto criativo e colaborativo que representa a união.",
+  "color": "bg-orange-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Juntem todas as almofadas e travesseiros da casa.", "completado": false },
+    { "id": 2, "texto": "Projetem e construam juntos o forte na sala.", "completado": false },
+    { "id": 3, "texto": "Passem o dia brincando dentro e ao redor do forte.", "completado": false }
+  ]
+},
+{
+  "id": 29,
+  "titulo": "Desafio 29: Dia de Voluntariado",
+  "desc": "Ajudar a comunidade juntos e aprender o valor da solidariedade.",
+  "color": "bg-teal-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Pesquisem instituições de caridade locais onde possam ajudar.", "completado": false },
+    { "id": 2, "texto": "Passem o dia participando da atividade escolhida.", "completado": false },
+    { "id": 3, "texto": "Conversem sobre como se sentiram ao ajudar outras pessoas.", "completado": false }
+  ]
+},
+{
+  "id": 30,
+  "titulo": "Desafio 30: Criar uma Cápsula do Tempo",
+  "desc": "Criar uma cápsula do tempo que capture um momento especial da relação.",
+  "color": "bg-cyan-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Escolham um objeto que represente um bom momento juntos.", "completado": false },
+    { "id": 2, "texto": "Decidam onde guardar (caixa, prateleira, etc.).", "completado": false },
+    { "id": 3, "texto": "Escrevam uma nota com a data e o motivo, e coloquem dentro.", "completado": false }
+  ]
+}
+
+
+  ],
+  "info": [
+    { "id": 1, "pregunta": "Qual é a comida favorita dele(a)?" },
+    { "id": 2, "pregunta": "Que tipo de música ou artista o(a) faz sorrir?" },
+    { "id": 3, "pregunta": "Qual é o principal passatempo dele(a)?" },
+    { "id": 4, "pregunta": "Qual é a matéria escolar favorita dele(a) (ou a que acha mais fácil)?" },
+    { "id": 5, "pregunta": "Quem é o(a) melhor amigo(a) dele(a)?" },
+    { "id": 6, "pregunta": "O que o(a) faz rir alto?" },
+    { "id": 7, "pregunta": "Qual assunto o(a) deixa nervoso(a) ou desconfortável?" },
+    { "id": 8, "pregunta": "Qual é o maior medo ou fobia dele(a)?" },
+    { "id": 9, "pregunta": "O que ele(a) quer ser quando crescer?" },
+    { "id": 10, "pregunta": "Qual foi o melhor presente que você já deu a ele(a)?" },
+    { "id": 11, "pregunta": "Qual atividade em conjunto ele(a) mais gosta?" },
+    { "id": 12, "pregunta": "Como ele(a) geralmente reage quando está com raiva ou frustrado(a)?" },
+    { "id": 13, "pregunta": "Qual é o filme ou série favorito dele(a)?" },
+    { "id": 14, "pregunta": "O que você geralmente pede para ele(a) fazer quando precisa de ajuda em casa?" },
+    { "id": 15, "pregunta": "Descreva a personalidade dele(a) em três palavras." }
+  ]
+},
+"landing": {
+  "hero": {
+    "login": "Entrar",
+    "title": "Fortaleça seu vínculo familiar,",
+    "titleHighlight": "um desafio por vez.",
+    "subtitle": "Conéctate é o app criado para padrastos e madrastas como você, que buscam construir uma conexão real e duradoura com seus enteados por meio de atividades divertidas e significativas.",
+    "inclusiveMessage": "Embora nos especializemos em famílias recompostas, nossas ferramentas e desafios são projetados para qualquer pai ou mãe que deseje fortalecer seu vínculo com seus filhos.",
+    "cta": "Comece sua jornada"
+  }
+},
+"purpose": {
+  "title": "Mais que um App, uma Ponte para a Conexão",
+  "subtitle": "Acreditamos que cada família reconstituída tem um potencial único para crescer e florescer. Nosso propósito é oferecer as ferramentas para construir uma base de confiança, respeito e amor duradouro.",
+  "quote1": {
+    "text": "Família não é uma coisa importante, é tudo.",
+    "author": "Michael J. Fox"
+  },
+  "quote2": {
+    "text": "A felicidade de uma família depende da paz e harmonia entre seus membros.",
+    "author": "Buda"
+  },
+  "resources": {
+    "title": "Recursos para sua jornada"
+  }
+},
+"finalCTA": {
+  "title": "Pronto para Fortalecer seu Vínculo?",
+  "subtitle": "Junte-se à nossa comunidade e comece hoje mesmo a construir memórias inesquecíveis. Sua jornada familiar o espera.",
+  "button": "Junte-se ao Conéctate"
+}
+
+}

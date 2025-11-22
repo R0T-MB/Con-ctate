@@ -1,0 +1,559 @@
+{
+   "nav": {
+    "intro": "介绍",
+    "retos": "挑战",
+    "ia": "人工智能助手",
+    "info": "信息",
+    "logros": "成就",
+    "comunidad": "社区"
+  },
+
+   "header": {
+    "title": "Conéctate",
+    "subtitle": "加强继父母与孩子之间的关系",
+    "logout": "登出",
+    "welcome": "欢迎，{{email}}！"
+  },
+  
+  "intro": {
+    "welcome_title": "欢迎来到 Conéctate",
+    "welcome_text": "作为继父或继母是一段充满爱、耐心和独特挑战的旅程。你并不孤单。",
+    "guide_title": "你的连接指南",
+    "guide_text": "我们将一步步引导你建立牢固而充满爱的纽带。",
+    "how_works_title": "工作原理",
+    "ready_title": "你准备好了吗？",
+    "ready_text": "让我们一起开始这段美好的旅程吧。",
+    "previous": "上一步",
+    "next": "下一步",
+    "start": "开始！"
+  },
+  "retos": {
+    "title": "挑战",
+    "button_start": "开始",
+    "button_hide": "隐藏",
+    "button_completed": "已完成",
+    "button_locked": "已锁定"
+  },
+  "ia": {
+  "title": "AI助手",
+  "description": "问我任何问题。我会根据你告诉我关于你继子的情况，为你提供个性化的建议。",
+  "usage_display": "今日已使用令牌：{{today}} / {{limit}}",
+  "some_text": "在这里输入你的问题，AI助手将为你提供答案。",
+  "placeholder": "示例：我如何才能更接近我的继子？",
+  "button": "咨询AI",
+  "thinking": "思考中...",
+  "response_title": "AI回复",
+  "clear": "清除",
+  "copy_response": "复制回复",
+  "ask_another": "再问一个问题",
+  "characters": "字符",
+  "press_ctrl_enter": "按 Ctrl+Enter 发送",
+  "remaining_tokens": "你还有 {{remaining}} 个可用令牌",
+  "near_limit": "你已接近每日限制",
+  "error_overloaded": "AI服务暂时过载，请稍等片刻后重试。",
+  "query_label": "你的提问"
+
+},
+  "info": {
+    "title": "连接测试",
+    "description": "你越了解你的继子，我们的 AI 提供的建议就越个性化。没有对或错的答案！",
+    "placeholder": "尽可能具体..."
+  },
+  "logros": {
+    "title": "我的胜利墙",
+    "description": "在这里，你可以保存每一个特别的时刻，每一个加强你们关系的小成就。",
+    "add_button": "+ 添加新胜利",
+    "empty_state": "尚未记录任何胜利。添加你的第一个特别时刻吧！",
+    "modal_title": "记录新胜利",
+    "form_label": "告诉我们你的时刻：",
+    "form_placeholder": "例如：今天他们终于在我没要求的情况下抱了我...",
+    "image_label": "添加图片（可选）",
+    "cancel_button": "取消",
+    "save_button": "保存胜利",
+    "delete_button": "删除成就",
+    "confirm_delete": "你确定要删除这个成就吗？"
+  },
+  "comunidad": {
+    "title": "即将推出：我们的社区",
+    "description": "我们正在建设一个安全、有支持性的空间，让世界各地的继父母可以分享经验、互相学习并共同成长。",
+    "ready_title": "获取通知！"
+  },
+  "howItWorks": {
+  "title": "如何运作？",
+  "step1": {
+    "title": "创建你的个人资料",
+    "desc": "注册并告诉我们一些关于你和你继子的信息。这些资料有助于为你定制体验。"
+  },
+  "step2": {
+    "title": "完成挑战",
+    "desc": "浏览我们设计的活动列表，以加强你们的关系。在完成每一步时进行勾选。"
+  },
+  "step3": {
+    "title": "咨询人工智能",
+    "desc": "如果你遇到困难，可以向我们的AI助手提问，它基于最优秀的育儿和重组家庭书籍进行训练。"
+  }
+},
+  "quotes": {
+  "title": "专家智慧",
+  "lofas": {
+    "author": "Jeannette Lofas",
+    "text1": "重组家庭不是破碎的家庭，而是一个新的家庭。它需要新的规则、新的角色和新的关系。",
+    "book1": "\"Winning the Heart of Your Stepchild\"",
+    "text2": "做继父或继母是世界上最困难的工作，但也可能是最有成就感的。",
+    "book2": "\"7 Steps to Bonding With Your Stepchild\""
+  }
+},
+ "login": {
+    "title": "登录",
+    "button": "进入",
+    "no_account": "还没有账户？",
+    "register_link": "在此注册",
+    "email_placeholder": "输入你的邮箱",
+    "password_placeholder": "输入你的密码",
+    "email_label": "邮箱",
+    "password_label": "密码",
+    "forgot_password": "忘记密码？"
+  },
+  "register": {
+    "title": "创建账户",
+    "button": "注册",
+    "have_account": "已经有账户？",
+    "login_link": "在此登录",
+    "email_placeholder": "输入你的邮箱",
+    "password_placeholder": "创建一个安全的密码",
+    "email_label": "邮箱",
+    "password_label": "密码",
+    "password_confirm_label": "确认密码",
+    "password_mismatch": "密码不匹配。"
+  },
+  "registrationSuccess": {
+  "title": "检查你的邮箱！",
+  "message": "我们已向你发送确认链接。请检查收件箱（以及垃圾邮件文件夹）以激活你的账户。",
+  "goToLogin": "前往登录页面"
+},
+  "forgotPassword": {
+  "title": "重置密码",
+  "label": "请输入你的邮箱",
+  "button": "发送重置链接",
+  "success": "请检查邮箱！我们已发送重置密码的链接。",
+  "backToLogin": "返回登录"
+},
+"general": {
+  "loading": "正在发送..."
+},
+  "data": {
+  "retos": [
+    {
+      "id": 1,
+      "titulo": "挑战 1：第一次连接",
+      "desc": "用小小的举动打破僵局。",
+      "color": "bg-blue-100",
+      "locked": false,
+      "pasos": [
+        { "id": 1, "texto": "每天早上带着微笑向他/她问好，不期待任何回应。", "completado": false },
+        { "id": 2, "texto": "问他/她今天过得怎么样，并认真倾听至少两分钟。", "completado": false },
+        { "id": 3, "texto": "找到一件值得真心称赞的事情（衣服、画画、帮助别人等）。", "completado": false }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "挑战 2：通过食物建立联系",
+      "desc": "厨房是建立感情的绝佳场所。",
+      "color": "bg-green-100",
+      "locked": true,
+      "pasos": [
+        { "id": 1, "texto": "问他/她在家最喜欢你做的菜是什么。", "completado": false },
+        { "id": 2, "texto": "邀请他/她本周一起做那道菜。", "completado": false },
+        { "id": 3, "texto": "用餐时关闭手机和电视，专注享受共处的时光。", "completado": false }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "挑战 3：30 分钟高质量相处时间",
+      "desc": "专注地陪伴，无任何干扰。",
+      "color": "bg-pink-100",
+      "locked": true,
+      "pasos": [
+        { "id": 1, "texto": "问他/她想和你一起做哪件事 30 分钟。", "completado": false },
+        { "id": 2, "texto": "将这个时刻写进日历，视为重要约会。", "completado": false },
+        { "id": 3, "texto": "在那 30 分钟里，全神贯注地陪伴他/她（不看手机）。", "completado": false }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "挑战 4：一个简单礼物的力量",
+      "desc": "一个表达“我在想你”的小举动。",
+      "color": "bg-purple-100",
+      "locked": true,
+      "pasos": [
+        { "id": 1, "texto": "注意他/她说想要或需要的东西（铅笔、漫画等）。", "completado": false },
+        { "id": 2, "texto": "在本周内送给他/她这个小礼物，无需特别理由。", "completado": false },
+        { "id": 3, "texto": "送礼时，只需说：“这个让我想起了你。”", "completado": false }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "挑战 5：探索他的世界",
+      "desc": "真诚地对他/她的兴趣保持关注。",
+      "color": "bg-yellow-100",
+      "locked": true,
+      "pasos": [
+        { "id": 1, "texto": "请他/她向你展示最喜欢的游戏、爱好或活动。", "completado": false },
+        { "id": 2, "texto": "让他/她解释规则或运作方式。", "completado": false },
+        { "id": 3, "texto": "与他/她一起玩或参与至少 20 分钟。", "completado": false }
+      ]
+    },
+    {
+      "id": 6,
+      "titulo": "挑战 6：家庭电影之夜",
+      "desc": "创造一个特别的共同体验。",
+      "color": "bg-indigo-100",
+      "locked": true,
+      "pasos": [
+        { "id": 1, "texto": "一起选择一部你们都喜欢的电影或剧集。", "completado": false },
+        { "id": 2, "texto": "准备爆米花或他/她最喜欢的零食。", "completado": false },
+        { "id": 3, "texto": "关灯，享受这场‘家庭影院’的时光。", "completado": false }
+      ]
+    },
+    {
+      "id": 7,
+      "titulo": "挑战 7：对话日记本",
+      "desc": "建立一个安全的交流空间。",
+      "color": "bg-red-100",
+      "locked": true,
+      "pasos": [
+        { "id": 1, "texto": "买一本漂亮的笔记本，告诉他/她这是只属于你们两人的‘秘密日记’。", "completado": false },
+        { "id": 2, "texto": "在第一页写下你们共同的美好回忆。", "completado": false },
+        { "id": 3, "texto": "把它放在他/她房间，让他/她有空时阅读或回复。", "completado": false }
+      ]
+    },
+    {
+      "id": 8,
+      "titulo": "挑战 8：一起学习新事物",
+      "desc": "共同的挑战能加深感情。",
+      "color": "bg-teal-100",
+      "locked": true,
+      "pasos": [
+        { "id": 1, "texto": "一起在 YouTube 上找一个你们都感兴趣的教程（比如魔术、小食谱等）。", "completado": false },
+        { "id": 2, "texto": "花时间一起练习，笑对小错误。", "completado": false },
+        { "id": 3, "texto": "把成果展示给家人，或作为你们的小秘密保留。", "completado": false }
+      ]
+    },
+    {
+      "id": 9,
+      "titulo": "挑战 9：具体的赞美",
+      "desc": "超越简单的‘很好’。",
+      "color": "bg-orange-100",
+      "locked": true,
+      "pasos": [
+        { "id": 1, "texto": "注意他/她一天中做得好的事情（做作业、帮助兄弟姐妹等）。", "completado": false },
+        { "id": 2, "texto": "不要只说‘不错’，而要具体一点：“我很欣赏你专注地解决那道数学题。”", "completado": false },
+        { "id": 3, "texto": "观察他/她对这种真诚赞美的反应。", "completado": false }
+      ]
+    },
+    {
+      "id": 10,
+      "titulo": "挑战 10：‘谢谢你在这里’卡片",
+      "desc": "表达他/她在你生活中的重要性。",
+      "color": "bg-cyan-100",
+      "locked": true,
+      "pasos": [
+        { "id": 1, "texto": "买一张卡片，或者自己动手做一张。", "completado": false },
+        { "id": 2, "texto": "写上一段真诚的话，表达你有多高兴他/她是家庭的一员。", "completado": false },
+        { "id": 3, "texto": "把卡片放在他的枕头上或包里，让他/她自己发现。", "completado": false }
+      ]
+    },
+    {
+        "id": 11,
+        "titulo": "挑战 11：计划一次小冒险",
+        "desc": "创造一段难忘的回忆。",
+        "color": "bg-lime-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "找一个你们都没去过的地方（公园、小博物馆或咖啡馆）。", "completado": false },
+          { "id": 2, "texto": "一起计划这次“旅行”：怎么去、在那里做什么。", "completado": false },
+          { "id": 3, "texto": "开始冒险吧！拍些照片留作纪念。", "completado": false }
+        ]
+      },
+      {
+        "id": 12,
+        "titulo": "挑战 12：运动时间",
+        "desc": "分享运动的热情。",
+        "color": "bg-emerald-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "邀请他/她一起运动或玩他/她喜欢的运动（哪怕只是公园里扔球）。", "completado": false },
+          { "id": 2, "texto": "鼓励他/她，庆祝每一个小小的进步。", "completado": false },
+          { "id": 3, "texto": "如果你不喜欢运动，可以提议一起散步或慢跑，听听音乐。", "completado": false }
+        ]
+      },
+      {
+        "id": 13,
+        "titulo": "挑战 13：积木建造之夜",
+        "desc": "培养创造力与团队合作。",
+        "color": "bg-fuchsia-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "拿出乐高、积木或用纸板和胶带也行。", "completado": false },
+          { "id": 2, "texto": "提出一个挑战：“我们来建最高的房子”或“一个娃娃的城堡”。", "completado": false },
+          { "id": 3, "texto": "一起动手完成项目，不必在意结果。", "completado": false }
+        ]
+      },
+      {
+        "id": 14,
+        "titulo": "挑战 14：一起读一章书",
+        "desc": "分享故事的力量。",
+        "color": "bg-rose-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "让他/她选择一本喜欢的书（漫画也可以）。", "completado": false },
+          { "id": 2, "texto": "坐在舒适的地方，轮流大声朗读一章。", "completado": false },
+          { "id": 3, "texto": "读完后，一起讨论故事的感受或猜猜接下来会发生什么。", "completado": false }
+        ]
+      },
+      {
+        "id": 15,
+        "titulo": "挑战 15：一起创建播放列表",
+        "desc": "你们关系的配乐。",
+        "color": "bg-violet-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "每个人挑选三首喜欢的或让他/她想起美好时光的歌曲。", "completado": false },
+          { "id": 2, "texto": "把所有歌曲放到同一个 Spotify 或 YouTube 播放列表中。", "completado": false },
+          { "id": 3, "texto": "在车上或家里播放这份列表，一起享受音乐时光。", "completado": false }
+        ]
+      },
+      {
+        "id": 16,
+        "titulo": "挑战 16：谈谈感受（轻松版）",
+        "desc": "安全地练习情感表达。",
+        "color": "bg-sky-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "开始说：'有时候我会觉得有点[难过/紧张]，当……'，分享你自己的感受。", "completado": false },
+          { "id": 2, "texto": "问他/她有没有过类似的感觉。", "completado": false },
+          { "id": 3, "texto": "认真倾听，不评判，只表达理解：'我明白你会那样感觉。'", "completado": false }
+        ]
+      },
+      {
+        "id": 17,
+        "titulo": "挑战 17：'是'的一天",
+        "desc": "一天内对一切合理请求都说“是”。",
+        "color": "bg-amber-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "告诉他/她，今天你会尽量对所有提议说“是”（在安全范围内）。", "completado": false },
+          { "id": 2, "texto": "当他/她请求（玩游戏、吃冰淇淋）时，热情地回答“好啊！”。", "completado": false },
+          { "id": 3, "texto": "一天结束时，一起聊聊今天的“是日”有多有趣。", "completado": false }
+        ]
+      },
+      {
+        "id": 18,
+        "titulo": "挑战18：共同的任务",
+        "desc": "通过团队合作来加强彼此的联系。",
+        "color": "bg-amber-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "一起选择一个可以共同完成的小任务：修理东西、做饭、照顾植物或帮忙完成一项简单的事情。", "completado": false },
+          { "id": 2, "texto": "在完成任务时，只讨论必要的内容，让合作的行动本身传达意义。", "completado": false },
+          { "id": 3, "texto": "结束后，以某种方式庆祝成果：拍张照片、讲个笑话或给予一个小小的象征性奖励。", "completado": false }
+    ]
+      },
+      {
+        "id": 19,
+        "titulo": "挑战 19：拜访你的童年地点",
+        "desc": "分享你的故事的一部分。",
+        "color": "bg-neutral-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "带他/她去你童年时重要的地方（学校、公园等）。", "completado": false },
+          { "id": 2, "texto": "讲一个你在那里的趣事或回忆。", "completado": false },
+          { "id": 3, "texto": "问他/她是否也有一个对他/她重要的地方，可以带你去看看。", "completado": false }
+        ]
+      },
+      {
+        "id": 20,
+        "titulo": "挑战 20：写一封未来的信",
+        "desc": "一起做梦，巩固长期的情感联系。",
+        "color": "bg-zinc-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "坐下来一起写一封给一年后“自己”的信。", "completado": false },
+          { "id": 2, "texto": "每个人写下自己希望在这一年内实现的事（旅行、成就等）。", "completado": false },
+          { "id": 3, "texto": "把信放进信封，约定明年同一天一起打开。", "completado": false }
+        ]
+      },
+      {
+        "id": 21,
+        "titulo": "挑战21：创建一个共同的电影清单",
+        "desc": "一个长期的项目，用于分享喜好并创造属于你们的传统。",
+        "color": "bg-indigo-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "每个人在纸上写下三部自己非常想看的电影。", "completado": false },
+          { "id": 2, "texto": "聚在一起阅读你们的清单，寻找相同的电影。", "completado": false },
+          { "id": 3, "texto": "选择三部最常出现的电影，并将它们加入主清单。", "completado": false }
+        ]
+      },
+      {
+        "id": 22,
+        "titulo": "挑战22：桌游之夜",
+        "desc": "远离屏幕，用更真实的方式建立联系。",
+        "color": "bg-purple-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "选择一个你们都喜欢的桌上游戏（纸牌、骰子等）。", "completado": false },
+          { "id": 2, "texto": "准备一些小吃和饮料，为游戏之夜做准备。", "completado": false },
+          { "id": 3, "texto": "一起玩至少一个小时，不受任何电子设备干扰。", "completado": false }
+        ]
+      },
+      {
+        "id": 23,
+        "titulo": "挑战23：‘无批评’的一天",
+        "desc": "练习耐心，创造一个安全的表达空间。",
+        "color": "bg-pink-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "约定整整一天内不批评、不纠正任何事情。", "completado": false },
+          { "id": 2, "texto": "如果对方出错，只需微笑并继续。", "completado": false },
+          { "id": 3, "texto": "在一天结束时，谈谈你们各自的感受。", "completado": false }
+        ]
+      },
+      {
+        "id": 24,
+        "titulo": "挑战24：让他们教你新东西",
+        "desc": "交换角色，让他们当一次老师。",
+        "color": "bg-yellow-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "问问他们想教你哪项技能或知识。", "completado": false },
+          { "id": 2, "texto": "花时间认真学习，让他们耐心地教你。", "completado": false },
+          { "id": 3, "texto": "真诚地感谢这堂课，无论内容多么简单。", "completado": false }
+        ]
+      },
+      {
+        "id": 25,
+        "titulo": "挑战25：创建友谊暗号",
+        "desc": "一个只有你们两人知道的特别符号，用来加深你们的联系。",
+        "color": "bg-green-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "发明一个秘密的手势或词语（例如：摸鼻子）。", "completado": false },
+          { "id": 2, "texto": "在公共场合使用它来交流，让别人听不懂。", "completado": false },
+          { "id": 3, "texto": "把它变成属于你们的小仪式。", "completado": false }
+        ]
+      },
+      {
+        "id": 26,
+        "titulo": "挑战26：计划一个未来的惊喜",
+        "desc": "一起展望未来，策划一件令人兴奋的事情。",
+        "color": "bg-blue-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "聊聊未来想一起去的地方。", "completado": false },
+          { "id": 2, "texto": "一起查查那个地方的资料（费用、活动等）。", "completado": false },
+          { "id": 3, "texto": "一起准备一个‘度假基金’罐子，并写下计划日期。", "completado": false }
+        ]
+      },
+      {
+        "id": 27,
+        "titulo": "挑战27：写一封感谢信",
+        "desc": "用文字表达感激之情的力量是惊人的。",
+        "color": "bg-red-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "每个人给对方写一封感谢信。", "completado": false },
+          { "id": 2, "texto": "在安静的地方大声读出自己的信。", "completado": false },
+          { "id": 3, "texto": "将这些信保存起来，作为特别时刻的纪念。", "completado": false }
+        ]
+      },
+      {
+        "id": 28,
+        "titulo": "挑战28：建造一个枕头堡垒",
+        "desc": "一个富有创意又合作的项目，象征你们的团结。",
+        "color": "bg-orange-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "收集家中所有的枕头和靠垫。", "completado": false },
+          { "id": 2, "texto": "一起设计并建造你们自己的堡垒。", "completado": false },
+          { "id": 3, "texto": "花整天时间在堡垒里玩耍。", "completado": false }
+        ]
+      },
+      {
+        "id": 29,
+        "titulo": "挑战29：志愿服务日",
+        "desc": "一起为社区奉献，学习无私帮助的价值。",
+        "color": "bg-teal-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "查找当地可以参与的慈善组织。", "completado": false },
+          { "id": 2, "texto": "一起在选择的活动中度过一天。", "completado": false },
+          { "id": 3, "texto": "谈谈帮助他人时的感受。", "completado": false }
+        ]
+      },
+      {
+        "id": 30,
+        "titulo": "挑战30：制作时间胶囊",
+        "desc": "制作一个时间胶囊，记录你们关系中完美的瞬间。",
+        "color": "bg-cyan-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "选择一个代表最近美好回忆的物品。", "completado": false },
+          { "id": 2, "texto": "决定将这个物品放在哪里（一个特别的盒子或架子）。", "completado": false },
+          { "id": 3, "texto": "写一张小纸条，注明日期和原因，并放入其中。", "completado": false }
+        ]
+      }
+
+
+  ],
+  "info": [
+    { "id": 1, "pregunta": "他/她最喜欢的食物是什么？" },
+    { "id": 2, "pregunta": "什么样的音乐或歌手能让他/她微笑？" },
+    { "id": 3, "pregunta": "他/她的主要爱好是什么？" },
+    { "id": 4, "pregunta": "他/她最喜欢的学校科目是什么（或最擅长的）？" },
+    { "id": 5, "pregunta": "他/她最好的朋友是谁？" },
+    { "id": 6, "pregunta": "什么事情最能让他/她开怀大笑？" },
+    { "id": 7, "pregunta": "哪些话题会让他/她感到不舒服或紧张？" },
+    { "id": 8, "pregunta": "他/她最大的恐惧或害怕的东西是什么？" },
+    { "id": 9, "pregunta": "他/她长大后想成为什么？" },
+    { "id": 10, "pregunta": "你送给他/她最棒的礼物是什么？" },
+    { "id": 11, "pregunta": "他/她最喜欢与你共同进行的活动是什么？" },
+    { "id": 12, "pregunta": "他/她生气或沮丧时通常怎么反应？" },
+    { "id": 13, "pregunta": "他/她最喜欢的电影或电视节目是什么？" },
+    { "id": 14, "pregunta": "当你在家需要帮助时，你通常请他/她做什么？" },
+    { "id": 15, "pregunta": "用三个词形容他/她的个性。" }
+  ]
+},
+"landing": {
+  "hero": {
+    "login": "登录",
+    "title": "增强你的家庭纽带，",
+    "titleHighlight": "一次一个挑战。",
+    "subtitle": "Conéctate 是为像你这样的继父母设计的应用，通过有趣且有意义的活动，与继子女建立真实而持久的关系。",
+    "inclusiveMessage": "虽然我们专注于重组家庭，但我们的工具和挑战适用于任何希望加强与子女关系的父母。",
+    "cta": "开始你的旅程"
+  }
+},
+"purpose": {
+  "title": "不仅仅是一款应用，更是一座连接的桥梁",
+  "subtitle": "我们相信每个重组家庭都有独特的潜力去成长与绽放。我们的目标是为你提供工具，帮助你建立信任、尊重和持久的爱。",
+  "quote1": {
+    "text": "家庭不是一件重要的事，它是全部。",
+    "author": "Michael J. Fox"
+  },
+  "quote2": {
+    "text": "一个家庭的幸福取决于成员之间的和平与和谐。",
+    "author": "佛陀"
+  },
+  "resources": {
+    "title": "你的旅程资源"
+  }
+},
+"finalCTA": {
+  "title": "准备好加强你们的纽带了吗？",
+  "subtitle": "加入我们的社区，从今天开始创造难忘的回忆。你的家庭之旅正等待着你。",
+  "button": "加入 Conéctate"
+}
+
+
+}

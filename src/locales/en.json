@@ -1,0 +1,561 @@
+{
+ "nav": {
+    "intro": "Introduction",
+    "retos": "Challenges",
+    "ia": "AI Assistant",
+    "info": "Information",
+    "logros": "Achievements",
+    "comunidad": "Community"
+  },
+
+    "header": {
+  "title": "Connect",
+  "subtitle": "Strengthen Your Family Bond, One Challenge at a Time.",
+  "logout": "Log Out",
+  "welcome": "Welcome, {{email}}!"
+},
+  
+  "intro": {
+    "welcome_title": "Welcome to Conéctate",
+    "welcome_text": "Being a stepparent is a journey filled with love, patience, and unique challenges. You are not alone in this.",
+    "guide_title": "Your Guide to Connection",
+    "guide_text": "We will walk you through simple steps to build a strong and loving bond.",
+    "how_works_title": "How It Works",
+    "ready_title": "Are You Ready?",
+    "ready_text": "Let's start this wonderful journey together.",
+    "previous": "Previous",
+    "next": "Next",
+    "start": "Let's Go!"
+  },
+  "retos": {
+    "title": "Challenges",
+    "button_start": "Start",
+    "button_hide": "Hide",
+    "button_completed": "Completed",
+    "button_locked": "Locked"
+  },
+  "ia": {
+  "title": "AI Assistant",
+  "description": "Ask me anything. I'm here to offer personalized advice based on what you've told me about your stepchild.",
+  "usage_display": "Tokens used today: {{today}} / {{limit}}",
+  "some_text": "Write your question here and the AI assistant will give you an answer.",
+  "placeholder": "Example: How can I get closer to my stepchild?",
+  "button": "Ask AI",
+  "thinking": "Thinking...",
+  "response_title": "AI Response",
+  "clear": "Clear",
+  "copy_response": "Copy response",
+  "ask_another": "Ask another question",
+  "characters": "characters",
+  "press_ctrl_enter": "Press Ctrl+Enter to send",
+  "remaining_tokens": "You have {{remaining}} tokens left",
+  "near_limit": "You are close to the daily limit",
+  "error_overloaded": "The AI service is temporarily overloaded. Please wait a moment and try again.",
+  "query_label": "Your query"
+},
+
+  "info": {
+    "title": "Connection Test",
+    "description": "The more you know your stepchild, the more personalized our AI's advice will be. There are no right or wrong answers!",
+    "placeholder": "Be as specific as possible..."
+  },
+  "logros": {
+    "title": "My Wall of Victories",
+    "description": "Here you can save every special moment, every small achievement that strengthens your bond.",
+    "add_button": "+ Add New Victory",
+    "empty_state": "No victories registered yet. Add your first great moment!",
+    "modal_title": "Register a New Victory",
+    "form_label": "Tell us about your moment:",
+    "form_placeholder": "e.g., Today they finally hugged me without me asking...",
+    "image_label": "Add an image (optional)",
+    "cancel_button": "Cancel",
+    "save_button": "Save Victory",
+    "delete_button": "Delete Achievement",
+    "confirm_delete": "Are you sure you want to delete this achievement?"
+  },
+  "comunidad": {
+    "title": "Coming Soon: Our Community",
+    "description": "We are building a safe and supportive space where stepparents from all over the world can share their experiences, learn from others, and grow together.",
+    "ready_title": "Get Notified!"
+  },
+  "howItWorks": {
+  "title": "How Does It Work?",
+  "step1": {
+    "title": "Create Your Profile",
+    "desc": "Register and tell us a bit about yourself and your stepchild. This information helps us personalize your experience."
+  },
+  "step2": {
+    "title": "Complete the Challenges",
+    "desc": "Explore our list of activities designed to strengthen your bond. Check off each step as you complete it."
+  },
+  "step3": {
+    "title": "Consult the AI",
+    "desc": "If you face a challenge, ask our AI assistant, trained with the best books on parenting and blended families."
+  }
+},
+  "quotes": {
+  "title": "Expert Wisdom",
+  "lofas": {
+    "author": "Jeannette Lofas",
+    "text1": "The stepfamily is not a broken family, it is a new family. It requires new rules, new roles, and new relationships.",
+    "book1": "\"Winning the Heart of Your Stepchild\"",
+    "text2": "Being a stepparent is the hardest job in the world, but it can also be the most rewarding.",
+    "book2": "\"7 Steps to Bonding With Your Stepchild\""
+   }
+  },
+  
+  "login": {
+    "title": "Log In",
+    "button": "Enter",
+    "no_account": "Don’t have an account yet?",
+    "register_link": "Register here",
+    "email_placeholder": "Enter your email",
+    "password_placeholder": "Enter your password",
+    "email_label": "Email",
+    "password_label": "Password",
+    "forgot_password": "Forgot your password?"
+
+  }, 
+  "register": {
+    "title": "Create Account",
+    "button": "Sign Up",
+    "have_account": "Already have an account?",
+    "login_link": "Log in here",
+    "email_placeholder": "Enter your email",
+    "password_placeholder": "Create a secure password",
+    "email_label": "Email",
+    "password_label": "Password",
+    "password_confirm_label": "Confirm Password",
+    "password_mismatch": "Passwords do not match."
+  },
+  "registrationSuccess": {
+  "title": "Check Your Email!",
+  "message": "We’ve sent you a confirmation link. Please check your inbox (and the spam folder) to activate your account.",
+  "goToLogin": "Go to Login Page"
+},
+  "forgotPassword": {
+  "title": "Reset Password",
+  "label": "Enter your email",
+  "button": "Send reset link",
+  "success": "Check your email! We've sent you a link to reset your password.",
+  "backToLogin": "Back to login"
+},
+"general": {
+  "loading": "Sending..."
+},
+
+    "data": {
+    "retos": [
+      {
+        "id": 1,
+        "titulo": "Challenge 1: The First Connection",
+        "desc": "Small gestures to break the ice.",
+        "color": "bg-blue-100",
+        "locked": false,
+        "pasos": [
+          { "id": 1, "texto": "Greet him/her with a smile every morning, without expecting anything in return.", "completado": false },
+          { "id": 2, "texto": "Ask how their day went and truly listen to the answer for at least 2 minutes.", "completado": false },
+          { "id": 3, "texto": "Find something genuine to compliment (their clothes, a drawing, the way they helped).", "completado": false }
+        ]
+      },
+      {
+        "id": 2,
+        "titulo": "Challenge 2: Connecting Through Food",
+        "desc": "The kitchen is a perfect place to bond.",
+        "color": "bg-green-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "Ask what their favorite dish is that you cook at home.", "completado": false },
+          { "id": 2, "texto": "Invite them to cook that favorite dish together this week.", "completado": false },
+          { "id": 3, "texto": "During the meal, turn off phones and TV, and enjoy the moment together.", "completado": false }
+        ]
+      },
+      {
+        "id": 3,
+        "titulo": "Challenge 3: 30 Minutes of Quality Time",
+        "desc": "Dedicate exclusive time, free from distractions.",
+        "color": "bg-pink-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "Ask what activity they’d like to do with you for 30 minutes.", "completado": false },
+          { "id": 2, "texto": "Schedule this moment in your calendar like an important appointment.", "completado": false },
+          { "id": 3, "texto": "During those 30 minutes, give them your full attention (no phone).", "completado": false }
+        ]
+      },
+      {
+        "id": 4,
+        "titulo": "Challenge 4: The Power of a Simple Gift",
+        "desc": "A gesture that says 'I thought of you.'",
+        "color": "bg-purple-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "Pay attention to something they say they want or need (a pencil, comic book, etc.).", "completado": false },
+          { "id": 2, "texto": "During the week, give them this small gift for no particular reason.", "completado": false },
+          { "id": 3, "texto": "When giving it, simply say: 'This made me think of you.'", "completado": false }
+        ]
+      },
+      {
+        "id": 5,
+        "titulo": "Challenge 5: Exploring Their World",
+        "desc": "Show genuine interest in their passions.",
+        "color": "bg-yellow-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "Ask them to show you their favorite video game, hobby, or pastime.", "completado": false },
+          { "id": 2, "texto": "Let them explain the rules or how it works.", "completado": false },
+          { "id": 3, "texto": "Play or participate with them for at least 20 minutes.", "completado": false }
+        ]
+      },
+      {
+        "id": 6,
+        "titulo": "Challenge 6: Home Movie Night",
+        "desc": "Create a special shared experience.",
+        "color": "bg-indigo-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "Choose a movie or series together that you both enjoy.", "completado": false },
+          { "id": 2, "texto": "Prepare popcorn or their favorite snack.", "completado": false },
+          { "id": 3, "texto": "Turn off the lights and enjoy the 'cinema' as if it were a real event.", "completado": false }
+        ]
+      },
+      {
+        "id": 7,
+        "titulo": "Challenge 7: The Conversation Journal",
+        "desc": "Create a safe space to communicate.",
+        "color": "bg-red-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "Buy a nice notebook and explain that it’s a 'secret journal' just for both of you.", "completado": false },
+          { "id": 2, "texto": "Write the first entry about a good moment you shared.", "completado": false },
+          { "id": 3, "texto": "Leave it in their room so they can read and reply whenever they want.", "completado": false }
+        ]
+      },
+      {
+        "id": 8,
+        "titulo": "Challenge 8: Learn Something New Together",
+        "desc": "A shared challenge strengthens connection.",
+        "color": "bg-teal-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "Find a YouTube tutorial on something that interests you both (a magic trick, a simple recipe, etc.).", "completado": false },
+          { "id": 2, "texto": "Spend time practicing it together, laughing at your mistakes.", "completado": false },
+          { "id": 3, "texto": "Show the result to the family or keep it just between you.", "completado": false }
+        ]
+      },
+      {
+        "id": 9,
+        "titulo": "Challenge 9: The Specific Compliment",
+        "desc": "Go beyond just saying 'good job'.",
+        "color": "bg-orange-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "During the day, notice something they do well (doing homework, helping a sibling).", "completado": false },
+          { "id": 2, "texto": "Instead of saying 'good job', say something specific: 'I admire how focused you were on that math problem.'", "completado": false },
+          { "id": 3, "texto": "Observe their reaction to such a thoughtful compliment.", "completado": false }
+        ]
+      },
+      {
+        "id": 10,
+        "titulo": "Challenge 10: A 'Thanks for Being Here' Card",
+        "desc": "Acknowledge their presence in your life.",
+        "color": "bg-cyan-100",
+        "locked": true,
+        "pasos": [
+          { "id": 1, "texto": "Buy a postcard or make one yourself.", "completado": false },
+          { "id": 2, "texto": "Write a sincere message about how happy you are that they’re part of the family.", "completado": false },
+          { "id": 3, "texto": "Leave it on their pillow or in their bag for them to find.", "completado": false }
+        ]
+      },
+      {
+  "id": 11,
+  "titulo": "Challenge 11: Plan a Small Adventure",
+  "desc": "Create an unforgettable memory.",
+  "color": "bg-lime-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Research a nearby place neither of you has visited (a park, a small museum, a café).", "completado": false },
+    { "id": 2, "texto": "Plan the 'trip' together: how to get there and what to do once you arrive.", "completado": false },
+    { "id": 3, "texto": "Live the adventure! Take photos to remember the day.", "completado": false }
+  ]
+},
+{
+  "id": 12,
+  "titulo": "Challenge 12: Sports Hour",
+  "desc": "Share your passion for sports.",
+  "color": "bg-emerald-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Invite them to play or practice their favorite sport (even if it's just tossing a ball at the park).", "completado": false },
+    { "id": 2, "texto": "Cheer them on and celebrate their achievements, no matter how small.", "completado": false },
+    { "id": 3, "texto": "If you don't like sports, suggest going for a walk or jog together while listening to music.", "completado": false }
+  ]
+},
+{
+  "id": 13,
+  "titulo": "Challenge 13: Block Building Night",
+  "desc": "Encourage creativity and teamwork.",
+  "color": "bg-fuchsia-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Grab some LEGOs, building blocks, or even cardboard and tape.", "completado": false },
+    { "id": 2, "texto": "Propose a challenge: 'let’s build the tallest house' or 'a castle for their toys'.", "completado": false },
+    { "id": 3, "texto": "Work together on the project, no matter how it turns out.", "completado": false }
+  ]
+},
+{
+  "id": 14,
+  "titulo": "Challenge 14: Read a Chapter Together",
+  "desc": "The power of sharing a story.",
+  "color": "bg-rose-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Let them choose a book they like (even if it's a comic).", "completado": false },
+    { "id": 2, "texto": "Sit in a cozy place and take turns reading a chapter aloud.", "completado": false },
+    { "id": 3, "texto": "At the end, talk about what you thought of the story or what might happen next.", "completado": false }
+  ]
+},
+{
+  "id": 15,
+  "titulo": "Challenge 15: Create a Shared Playlist",
+  "desc": "The soundtrack of your relationship.",
+  "color": "bg-violet-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Each of you picks 3 songs you like or that bring good memories.", "completado": false },
+    { "id": 2, "texto": "Combine all the songs into one playlist on Spotify or YouTube.", "completado": false },
+    { "id": 3, "texto": "Play the playlist in the car or at home while doing another activity.", "completado": false }
+  ]
+},
+{
+  "id": 16,
+  "titulo": "Challenge 16: Talk About Feelings (Light Version)",
+  "desc": "Practice vulnerability in a safe way.",
+  "color": "bg-sky-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Start a conversation like: 'Sometimes I feel a little [sad/nervous] when…', sharing something about yourself.", "completado": false },
+    { "id": 2, "texto": "Ask if they’ve ever felt that way too.", "completado": false },
+    { "id": 3, "texto": "Listen without judging and validate their feeling: 'I understand why you feel that way.'", "completado": false }
+  ]
+},
+{
+  "id": 17,
+  "titulo": "Challenge 17: The 'Yes' Day",
+  "desc": "A day to say 'yes' to everything (within reason).",
+  "color": "bg-amber-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Announce that for one day you’ll try to say 'yes' to their ideas (within safe and reasonable limits).", "completado": false },
+    { "id": 2, "texto": "When they ask for something (play a game, eat ice cream), say 'yes!' enthusiastically.", "completado": false },
+    { "id": 3, "texto": "At the end of the day, talk about how fun it was to have a 'yes' day.", "completado": false }
+  ]
+},
+{
+  "id": 18,
+  "titulo": "Challenge 18: Shared Mission",
+  "desc": "Strengthen your bond through a teamwork activity.",
+  "color": "bg-amber-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Choose a small mission you can do together: fix something, cook, take care of a plant, or help with a simple task.", "completado": false },
+    { "id": 2, "texto": "While doing it, talk only about what’s needed and let the teamwork speak for itself.", "completado": false },
+    { "id": 3, "texto": "When you’re done, celebrate in some way: take a picture, share a joke, or give a small symbolic reward.", "completado": false }
+  ]
+},
+{
+  "id": 19,
+  "titulo": "Challenge 19: Visit a Place from Your Childhood",
+  "desc": "Share a piece of your story.",
+  "color": "bg-neutral-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Take them to a place that was important to you as a child (your school, a park where you used to play).", "completado": false },
+    { "id": 2, "texto": "Tell them a personal story about what you used to do there.", "completado": false },
+    { "id": 3, "texto": "Ask if there’s a place that’s special to them that you could visit together.", "completado": false }
+  ]
+},
+{
+  "id": 20,
+  "titulo": "Challenge 20: Write a Letter to the Future",
+  "desc": "Dream together and strengthen your long-term bond.",
+  "color": "bg-zinc-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Sit together and write a letter to your future selves a year from now.", "completado": false },
+    { "id": 2, "texto": "Each person writes about what they hope will happen in that year (a trip, an achievement, etc.).", "completado": false },
+    { "id": 3, "texto": "Keep the letters in an envelope and promise to open them together next year on that same date.", "completado": false }
+  ]
+},
+{
+  "id": 21,
+  "titulo": "Challenge 21: Create a Shared Movie List",
+  "desc": "A long-term project to share tastes and build traditions.",
+  "color": "bg-indigo-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Each person writes down 3 movies they’d love to watch.", "completado": false },
+    { "id": 2, "texto": "Meet and read your lists together, looking for matches.", "completado": false },
+    { "id": 3, "texto": "Pick the 3 movies with the most matches and add them to a master list.", "completado": false }
+  ]
+},
+{
+  "id": 22,
+  "titulo": "Challenge 22: Board Game Night",
+  "desc": "Disconnect from screens to connect in real life.",
+  "color": "bg-purple-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Choose a board game you both enjoy (cards, dice, etc.).", "completado": false },
+    { "id": 2, "texto": "Prepare some snacks and drinks for game night.", "completado": false },
+    { "id": 3, "texto": "Play for at least an hour with no digital distractions.", "completado": false }
+  ]
+},
+{
+  "id": 23,
+  "titulo": "Challenge 23: No-Criticism Day",
+  "desc": "Practice patience and create a safe space for expression.",
+  "color": "bg-pink-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "For a full day, make a pact not to criticize or correct anything.", "completado": false },
+    { "id": 2, "texto": "If something goes wrong, just smile and move on.", "completado": false },
+    { "id": 3, "texto": "At the end of the day, talk about how you both felt.", "completado": false }
+  ]
+},
+{
+  "id": 24,
+  "titulo": "Challenge 24: Let Them Teach You Something New",
+  "desc": "Switch roles and let them be the teacher for once.",
+  "color": "bg-yellow-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Ask what skill or topic they’d like to teach you.", "completado": false },
+    { "id": 2, "texto": "Take time to learn with patience and enthusiasm.", "completado": false },
+    { "id": 3, "texto": "Thank them sincerely for the lesson, no matter how simple.", "completado": false }
+  ]
+},
+{
+  "id": 25,
+  "titulo": "Challenge 25: Create a Friendship Secret Code",
+  "desc": "A special symbol only you two know to strengthen your bond.",
+  "color": "bg-green-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Invent a secret gesture or word (e.g., touching your nose).", "completado": false },
+    { "id": 2, "texto": "Use it in public to communicate without others understanding.", "completado": false },
+    { "id": 3, "texto": "Make it your little ritual of complicity.", "completado": false }
+  ]
+},
+{
+  "id": 26,
+  "titulo": "Challenge 26: Plan a Future Surprise",
+  "desc": "Look to the future and plan something exciting together.",
+  "color": "bg-blue-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Talk about a place you’d like to visit together someday.", "completado": false },
+    { "id": 2, "texto": "Do some research about that place (costs, things to do).", "completado": false },
+    { "id": 3, "texto": "Create a shared ‘vacation fund’ jar and set a date.", "completado": false }
+  ]
+},
+{
+  "id": 27,
+  "titulo": "Challenge 27: Write a Thank-You Letter",
+  "desc": "Expressing gratitude in writing has amazing power.",
+  "color": "bg-red-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Each of you writes a thank-you letter to the other.", "completado": false },
+    { "id": 2, "texto": "Read your letters aloud in a quiet place.", "completado": false },
+    { "id": 3, "texto": "Keep the letters as a reminder of this special moment.", "completado": false }
+  ]
+},
+{
+  "id": 28,
+  "titulo": "Challenge 28: Build a Pillow Fort",
+  "desc": "A creative and collaborative project that represents your bond.",
+  "color": "bg-orange-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Gather all the pillows and cushions you have at home.", "completado": false },
+    { "id": 2, "texto": "Design and build your fort together in the living room.", "completado": false },
+    { "id": 3, "texto": "Spend the day playing inside and around your fort.", "completado": false }
+  ]
+},
+{
+  "id": 29,
+  "titulo": "Challenge 29: Volunteer Day",
+  "desc": "Give back to the community together and learn the value of selfless help.",
+  "color": "bg-teal-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Research local charities where you can lend a hand.", "completado": false },
+    { "id": 2, "texto": "Spend the day together participating in the chosen activity.", "completado": false },
+    { "id": 3, "texto": "Talk about how it felt to help others.", "completado": false }
+  ]
+},
+{
+  "id": 30,
+  "titulo": "Challenge 30: Create a Time Capsule",
+  "desc": "Create a time capsule that captures a perfect moment in your relationship.",
+  "color": "bg-cyan-100",
+  "locked": true,
+  "pasos": [
+    { "id": 1, "texto": "Choose an object that represents a happy recent moment together.", "completado": false },
+    { "id": 2, "texto": "Decide where to keep it (special box, shelf, etc.).", "completado": false },
+    { "id": 3, "texto": "Write a small note with the date and why it’s special, and place it inside.", "completado": false }
+  ]
+}
+
+
+    ],
+    "info": [
+      { "id": 1, "pregunta": "What is their favorite food?" },
+      { "id": 2, "pregunta": "What kind of music or artist makes them smile?" },
+      { "id": 3, "pregunta": "What is their main hobby?" },
+      { "id": 4, "pregunta": "What is their favorite school subject (or the one they find easiest)?" },
+      { "id": 5, "pregunta": "Who is their best friend?" },
+      { "id": 6, "pregunta": "What makes them laugh out loud?" },
+      { "id": 7, "pregunta": "What topic makes them nervous or uncomfortable?" },
+      { "id": 8, "pregunta": "What is their biggest fear or phobia?" },
+      { "id": 9, "pregunta": "What do they want to be when they grow up?" },
+      { "id": 10, "pregunta": "What has been the best gift you’ve ever given them?" },
+      { "id": 11, "pregunta": "Which shared activity do they enjoy the most?" },
+      { "id": 12, "pregunta": "How do they usually react when angry or frustrated?" },
+      { "id": 13, "pregunta": "What is their favorite movie or TV show?" },
+      { "id": 14, "pregunta": "What do you usually ask them to do when you need help at home?" },
+      { "id": 15, "pregunta": "Describe their personality in three words." }
+    ]
+  },
+  "landing": {
+  "hero": {
+    "login": "Log In",
+    "title": "Strengthen Your Family Bond,",
+    "titleHighlight": "One Challenge at a Time.",
+    "subtitle": "Conéctate is the app designed for stepparents like you who want to build a real and lasting connection with their stepchildren through fun and meaningful activities.",
+    "inclusiveMessage": "Although we specialize in blended families, our tools and challenges are designed for any parent seeking to strengthen their bond with their children.",
+    "cta": "Start Your Journey"
+  }
+},
+"purpose": {
+  "title": "More Than an App, a Bridge to Connection",
+  "subtitle": "We believe every blended family has a unique potential to grow and flourish. Our purpose is to give you the tools to build a foundation of trust, respect, and lasting love.",
+  "quote1": {
+    "text": "Family is not an important thing, it's everything.",
+    "author": "Michael J. Fox"
+  },
+  "quote2": {
+    "text": "The happiness of a family depends on the peace and harmony among its members.",
+    "author": "Buddha"
+  },
+  "resources": {
+    "title": "Resources for Your Journey"
+  }
+},
+"finalCTA": {
+  "title": "Ready to Strengthen Your Bond?",
+  "subtitle": "Join our community and start building unforgettable memories today. Your family journey awaits.",
+  "button": "Join Conéctate"
+}
+
+}
