@@ -140,6 +140,12 @@
   "success": "Check your email! We've sent you a link to reset your password.",
   "backToLogin": "Back to login"
 },
+  "recoverPassword": {
+  "title": "Reset Password",
+  "newPasswordLabel": "Enter your new password",
+  "button": "Reset Password",
+  "backToLogin": "Back to login"
+},
 "general": {
   "loading": "Sending..."
 },

@@ -140,6 +140,12 @@
     "success": "¡Revisa tu correo! Hemos enviado un enlace para que restablezcas tu contraseña.",
     "backToLogin": "Volver al inicio de sesión"
   },
+  "recoverPassword": {
+    "title": "Restablecer Contraseña",
+    "newPasswordLabel": "Introduce tu nueva contraseña",
+    "button": "Restablecer Contraseña",
+    "backToLogin": "Volver al inicio de sesión"
+  },
   "general": {
     "loading": "Enviando..."
   },

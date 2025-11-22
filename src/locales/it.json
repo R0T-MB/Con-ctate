@@ -137,6 +137,12 @@
   "success": "Controlla la tua email! Ti abbiamo inviato un link per reimpostare la password.",
   "backToLogin": "Torna al login"
 },
+  "recoverPassword": {
+  "title": "Reimposta Password",
+  "newPasswordLabel": "Inserisci la tua nuova password",
+  "button": "Reimposta Password",
+  "backToLogin": "Torna al login"
+},
 "general": {
   "loading": "Invio..."
 },

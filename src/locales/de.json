@@ -138,6 +138,12 @@
   "success": "Überprüfe deine E-Mails! Wir haben dir einen Link zum Zurücksetzen deines Passworts geschickt.",
   "backToLogin": "Zurück zur Anmeldung"
 },
+  "recoveryPassword": {
+  "title": "Passwort zurücksetzen",
+  "newPasswordLabel": "Gib dein neues Passwort ein",
+  "button": "Passwort zurücksetzen",
+  "backToLogin": "Zurück zur Anmeldung"
+},
 "general": {
   "loading": "Wird gesendet..."
 },

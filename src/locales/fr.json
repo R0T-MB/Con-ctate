@@ -138,6 +138,12 @@
   "success": "Vérifiez votre e-mail ! Nous avons envoyé un lien pour réinitialiser votre mot de passe.",
   "backToLogin": "Retour à la connexion"
 },
+  "recoverPassword": {
+  "title": "Réinitialiser le mot de passe",
+  "newPasswordLabel": "Saisissez votre nouveau mot de passe",
+  "button": "Réinitialiser le mot de passe",
+  "backToLogin": "Retour à la connexion"
+},
 "general": {
   "loading": "Envoi..."
 },

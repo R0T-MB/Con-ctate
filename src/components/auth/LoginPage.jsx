@@ -1,11 +1,12 @@
 // src/components/auth/LoginPage.jsx
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useSearchParams } from 'react-router-dom'; // <-- CAMBIO AQUÍ: AÑADE useSearchParams A LA IMPORTACIÓN
 import { useAuth } from '../../context/AuthContext';
 import { useTranslation } from 'react-i18next';
 import Card from '../ui/card';
 import Button from '../ui/button';
 import LanguageSelector from '../LanguageSelector';
+import RecoverPasswordPage from './RecoverPasswordPage'; // <-- ASEGÚRATE DE QUE ESTE NOMBRE COINCIDA CON EL NOMBRE DE TU ARCHIVO
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -15,6 +16,14 @@ const LoginPage = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
   const { t } = useTranslation();
+  
+  // <-- LA LÓGICA AQUÍ ES CORRECTA
+  const [searchParams] = useSearchParams();
+  const recoveryType = searchParams.get('type');
+
+  if (recoveryType === 'recovery') {
+    return <RecoverPasswordPage />;
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();

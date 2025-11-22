@@ -138,6 +138,12 @@
   "success": "请检查邮箱！我们已发送重置密码的链接。",
   "backToLogin": "返回登录"
 },
+  "recoverPassword": {
+  "title": "重置密码",
+  "newPasswordLabel": "输入你的新密码",
+  "button": "重置密码",
+  "backToLogin": "返回登录"
+},
 "general": {
   "loading": "正在发送..."
 },
