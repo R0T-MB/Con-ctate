@@ -13,7 +13,7 @@ import FinalCTASection from './FinalCTASection';
 import { useTheme } from '../context/ThemeContext';
 
 const LandingPage = () => {
-  const { theme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
   const { user, logout } = useAuth();
   const { t } = useTranslation(); // <-- USO CORRECTO
@@ -43,7 +43,15 @@ const LandingPage = () => {
 
   return (
     <>
-      {/* HERO SECTION MODERNIZADA */}
+
+    <button
+      onClick={toggleTheme}
+      className="absolute top-4 right-4 z-10 p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+      aria-label="Cambiar tema"
+    >
+      {theme === 'light' ? '🌙' : '🌞'}
+    </button>
+
       <section 
         className={`relative flex items-center justify-center min-h-screen ${theme === 'dark' ? 'dark' : ''}`}
         style={{
