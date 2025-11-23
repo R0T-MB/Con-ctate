@@ -10,8 +10,10 @@ import LanguageSelector from './LanguageSelector';
 import HowItWorksSection from './HowItWorksSection';
 import PurposeSection from './PurposeSection';
 import FinalCTASection from './FinalCTASection';
+import { useTheme } from '../context/ThemeContext';
 
 const LandingPage = () => {
+  const { theme } = useTheme();
   const navigate = useNavigate();
   const { user, logout } = useAuth();
   const { t } = useTranslation(); // <-- USO CORRECTO
@@ -43,7 +45,7 @@ const LandingPage = () => {
     <>
       {/* HERO SECTION MODERNIZADA */}
       <section 
-        className="relative flex items-center justify-center min-h-screen text-white"
+        className={`relative flex items-center justify-center min-h-screen ${theme === 'dark' ? 'dark' : ''}`}
         style={{
           backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.pexels.com/photos/2253879/pexels-photo-2253879.jpeg?auto=compress&cs=tinysrgb&w=1920)',
           backgroundSize: 'cover',
