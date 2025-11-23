@@ -7,7 +7,7 @@ import { supabase } from '../../lib/supabaseClient'; // <-- IMPORTA SUPABASE AQU
 import Card from '../ui/card';
 import Button from '../ui/button';
 import LanguageSelector from '../LanguageSelector';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../../context/ThemeContext';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
