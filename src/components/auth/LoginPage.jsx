@@ -20,6 +20,7 @@ const LoginPage = () => {
   // <-- LA LÓGICA AQUÍ ES CORRECTA
   const [searchParams] = useSearchParams();
   const recoveryType = searchParams.get('type');
+  console.log('El valor de recoveryType es:', recoveryType);
 
   if (recoveryType === 'recovery') {
     return <RecoverPasswordPage />;
