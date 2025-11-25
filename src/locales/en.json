@@ -53,7 +53,6 @@
   "error_overloaded": "The AI service is temporarily overloaded. Please wait a moment and try again.",
   "query_label": "Your query"
 },
-
   "info": {
     "title": "Connection Test",
     "description": "The more you know your stepchild, the more personalized our AI's advice will be. There are no right or wrong answers!",
@@ -563,5 +562,4 @@
   "subtitle": "Join our community and start building unforgettable memories today. Your family journey awaits.",
   "button": "Join Conéctate"
 }
-
 }

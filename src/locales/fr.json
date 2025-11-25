@@ -52,7 +52,6 @@
   "near_limit": "Vous approchez de la limite quotidienne",
   "error_overloaded": "Le service d’IA est temporairement surchargé. Veuillez patienter un moment et réessayer.",
   "query_label": "Votre demande"
-
   },
   "info": {
     "title": "Test de Connexion",
@@ -561,5 +560,4 @@
   "subtitle": "Rejoignez notre communauté et commencez dès aujourd’hui à créer des souvenirs inoubliables. Votre voyage familial vous attend.",
   "button": "Rejoindre Conéctate"
 }
-
 }

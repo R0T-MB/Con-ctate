@@ -1,38 +1,24 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
 
-// Importa los archivos de traducción
-import enTranslations from './locales/en.json';
-import esTranslations from './locales/es.json';
-import ptTranslations from './locales/pt.json';
-import frTranslations from './locales/fr.json';
-import deTranslations from './locales/de.json';
-import itTranslations from './locales/it.json';
-import zhTranslations from './locales/zh.json';
+// Archivos de traducción
+import en from "./locales/en.json";
+import es from "./locales/es.json";
+import pt from "./locales/pt.json";
+import fr from "./locales/fr.json";
+import de from "./locales/de.json";
+import it from "./locales/it.json";
+import zh from "./locales/zh.json";
 
 const resources = {
-  en: {
-    translation: enTranslations,
-  },
-  es: {
-    translation: esTranslations,
-  },
-  pt: {
-    translation: ptTranslations,
-  },
-  fr: {
-    translation: frTranslations,
-  },
-  de: {
-    translation: deTranslations,
-  },
-  it: {
-    translation: itTranslations,
-  },
-  zh: {
-    translation: zhTranslations,
-  },
+  en: { translation: en },
+  es: { translation: es },
+  pt: { translation: pt },
+  fr: { translation: fr },
+  de: { translation: de },
+  it: { translation: it },
+  zh: { translation: zh },
 };
 
 i18n
@@ -40,14 +26,17 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: 'en', // Idioma por defecto si no se detecta ninguno
-    debug: true, // Poner en true para ver los logs de i18next (útil para depurar)
+    fallbackLng: "en",
+    debug: false, // ponlo en true solo mientras debuggeamos
     interpolation: {
-      escapeValue: false, // React ya escapa los valores por defecto
+      escapeValue: false,
     },
     detection: {
-      order: ['localStorage', 'navigator', 'htmlTag'], // Orden de detección de idioma
-      caches: ['localStorage'], // Guardar el idioma en localStorage
+      order: ["localStorage", "navigator", "htmlTag"],
+      caches: ["localStorage"],
+    },
+    react: {
+      useSuspense: false, // evita warnings y errores de render en React
     },
   });
 

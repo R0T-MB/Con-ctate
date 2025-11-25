@@ -52,7 +52,6 @@
   "near_limit": "Sie nähern sich dem Tageslimit",
   "error_overloaded": "Der KI-Dienst ist vorübergehend überlastet. Bitte warten Sie einen Moment und versuchen Sie es erneut.",
   "query_label": "Deine Anfrage"
-
 },
   "info": {
     "title": "Verbindungstest",
@@ -561,5 +560,4 @@
   "subtitle": "Tritt unserer Community bei und beginne noch heute, unvergessliche Erinnerungen zu schaffen. Deine Familienreise wartet.",
   "button": "Conéctate beitreten"
 }
-
 }
