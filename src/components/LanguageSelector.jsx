@@ -4,7 +4,12 @@ import i18n from '../i18n';
 
 const LanguageSelector = ({ className = "" }) => {
   const handleChange = (e) => {
-    i18n.changeLanguage(e.target.value);
+    const newLang = e.target.value;
+
+    i18n.changeLanguage(newLang);
+
+    // Aquí está el punto clave que falta en tu versión:
+    localStorage.setItem("i18nextLng", newLang);
   };
 
   return (
