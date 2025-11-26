@@ -85,6 +85,7 @@ export const loadUserProgress = async (userId) => {
     return { success: false, error: 'Falta el ID de usuario.' };
   }
 
+  
   const { data, error } = await supabase
     .from('profiles')
     // --- NUEVO: Añadimos token_usage a la consulta ---
