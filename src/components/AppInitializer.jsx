@@ -15,6 +15,7 @@ import MainLayout from './MainLayout';
 import TestRoute from '../TestRoute'; // Asegúrate que la ruta es correcta
 import TestDestination from '../TestDestination'; // Asegúrate que la ruta es correcta
 import RegistrationSuccessPage from './auth/RegistrationSuccessPage';
+import ResetPasswordPage from './auth/ResetPasswordPage'; // <-- YA ESTABA IMPORTADO
 
 // Componente para proteger rutas (sin cambios)
 const ProtectedRoute = ({ children }) => {
@@ -69,6 +70,27 @@ function AppContent() {
                 }).finally(() => {
                     setIsConfirming(false);
                 });
+            } else if (type === 'recovery' && accessToken) { // <-- BLOQUE AÑADIDO PARA RECUPERACIÓN
+                // Es un enlace de recuperación de contraseña
+                const toastId = toast.loading('Verificando tu acceso...');
+                
+                supabase.auth.setSession({
+                    access_token: accessToken,
+                    refresh_token: refreshToken,
+                }).then(({ error }) => {
+                    if (!error) {
+                        // Sesión temporal establecida, redirige a la página de reseteo
+                        toast.success('Acceso verificado. Por favor, introduce tu nueva contraseña.', { id: toastId });
+                        navigate('/reset-password');
+                        window.history.replaceState({}, document.title, window.location.pathname);
+                    } else {
+                        console.error('Error al verificar el enlace de recuperación:', error);
+                        toast.error(`Error de verificación: ${error.message}`, { id: toastId });
+                        setTimeout(() => navigate('/forgot-password'), 2500);
+                    }
+                }).finally(() => {
+                    setIsConfirming(false);
+                });
             } else {
                 setIsConfirming(false);
             }
@@ -86,6 +108,7 @@ function AppContent() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+            <Route path="/reset-password" element={<ResetPasswordPage />} /> {/* <-- RUTA AÑADIDA */}
             <Route path="/test-route" element={<TestRoute />} />
             <Route path="/test-destination" element={<TestDestination />} />
             <Route path="/registration-success" element={<RegistrationSuccessPage />} />
