@@ -53,19 +53,34 @@ const LandingPage = () => {
         }}
       >
         {/* Contenedor superior para botones */}
-        <div className="absolute top-4 right-4 z-10 flex items-center space-x-4">
-          <LanguageSelector className="bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white/30" />
-          {user && (
-            <Button
-              onClick={logout}
-              variant="secondary"
-              size="sm"
-              className="bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white/30"
-            >
-              Cerrar Sesión Actual (Depuración)
-            </Button>
-          )}
-        </div>
+        {/* <-- REEMPLAZA ESTE BLOQUE COMPLETO */}
+<div className="absolute top-4 right-4 z-10 flex items-center space-x-4">
+  <LanguageSelector className="bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white/30" />
+  
+  {/* Botón de Iniciar Sesión: Solo se muestra si NO hay un usuario */}
+  {!user && (
+    <Button
+      onClick={() => navigate('/login')}
+      variant="secondary"
+      size="sm"
+      className="bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white/30"
+    >
+      {t('landing.hero.login', 'Iniciar Sesión')}
+    </Button>
+  )}
+
+  {/* Botón de Cerrar Sesión: Solo se muestra si HAY un usuario */}
+  {user && (
+    <Button
+      onClick={logout}
+      variant="secondary"
+      size="sm"
+      className="bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white/30"
+    >
+      {t('header.logout', 'Cerrar Sesión')}
+    </Button>
+  )}
+</div>
 
         {/* Contenedor principal del contenido */}
         <motion.div
