@@ -72,6 +72,7 @@ function AppContent() {
                 });
             } else if (type === 'recovery' && accessToken) { // <-- BLOQUE AÑADIDO PARA RECUPERACIÓN
                 // Es un enlace de recuperación de contraseña
+                console.log('¡Enlace de recuperación detectado!');
                 const toastId = toast.loading('Verificando tu acceso...');
                 
                 supabase.auth.setSession({
@@ -79,9 +80,11 @@ function AppContent() {
                     refresh_token: refreshToken,
                 }).then(({ error }) => {
                     if (!error) {
+                        console.log('Sesión de recuperación establecida con éxito.');
                         // Sesión temporal establecida, redirige a la página de reseteo
                         toast.success('Acceso verificado. Por favor, introduce tu nueva contraseña.', { id: toastId });
                         navigate('/reset-password');
+                        console.log('Intentando navegar a /reset-password...');
                         window.history.replaceState({}, document.title, window.location.pathname);
                     } else {
                         console.error('Error al verificar el enlace de recuperación:', error);

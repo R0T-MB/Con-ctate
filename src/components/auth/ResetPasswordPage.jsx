@@ -6,6 +6,7 @@ import { supabase } from '../../lib/supabaseClient';
 import toast from 'react-hot-toast';
 
 function ResetPasswordPage() {
+    console.log('¡El componente ResetPasswordPage se ha cargado!');
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
