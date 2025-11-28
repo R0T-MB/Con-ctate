@@ -11,6 +11,7 @@ function BottomNav({ activeTab, setActiveTab }) {
     { id: 'ia', labelKey: 'nav.ia', icon: '🤖' },
     { id: 'info', labelKey: 'nav.info', icon: '📝' },
     { id: 'logros', labelKey: 'nav.logros', icon: '🏆' },
+    { id: 'historial', labelKey: 'nav.history', icon: '🕐' }, // <-- PESTAÑA AÑADIDA AQUÍ
     { id: 'comunidad', labelKey: 'nav.comunidad', icon: '👥' }, 
   ];
 

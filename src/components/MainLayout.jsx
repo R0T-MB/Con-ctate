@@ -16,6 +16,9 @@ import { useAuth } from '../context/AuthContext';
 import { saveUserProgress, loadUserProgress, updateTokenUsage } from '../services/databaseService';
 import React, { useState, useEffect, useCallback } from 'react';
 import { debounce } from 'lodash';
+import ChatHistoryPage from './ChatHistoryPage';
+import { saveChatEntry } from '../lib/chatHistory'; // <-- 1. IMPORTACIÓN AÑADIDA
+import toast from 'react-hot-toast'; // <-- 1. IMPORTACIÓN AÑADIDA
 
 // Definimos el límite diario de tokens
 const DAILY_TOKEN_LIMIT = 5000;
@@ -235,6 +238,19 @@ function MainLayout() {
       if (resultado.success) {
         setIaResponse(resultado.data);
 
+        // --- LÓGICA PARA GUARDAR EN EL HISTORIAL ---
+        try {
+          const { error } = await saveChatEntry(iaQuery, resultado.data);
+          if (error) {
+            console.error("Error al guardar en el historial:", error);
+            toast.error('La respuesta se generó, pero no se pudo guardar en el historial.');
+          }
+        } catch (historyError) {
+          console.error("Error inesperado al guardar en el historial:", historyError);
+          toast.error('Ocurrió un error inesperado al guardar la conversación.');
+        }
+        // --- FIN DE LA LÓGICA AÑADIDA ---
+
         // Actualizamos el uso de tokens
         const tokensUsed = resultado.tokenUsage?.total || 0;
         if (tokensUsed > 0) {
@@ -404,163 +420,158 @@ function MainLayout() {
           </div>
         );
 
-            case "ia":
-  return (
-    <div className="w-full px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto lg:max-w-6xl xl:max-w-7xl">
-        <div className="space-y-6">
-          <Card className="bg-white dark:bg-gray-800 shadow-lg">
-            {/* Header con título e indicador de tokens */}
-            <div className="border-b border-gray-200 dark:border-gray-700 pb-4 mb-4">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                {t('ia.title')} {/* <-- CAMBIO AQUÍ: "Asistente IA" por {t('ia.title')} */}
-              </h2>
-              
-              {/* Indicador de uso de tokens mejorado */}
-              <div className="p-4 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg">
-                <div className="flex justify-between items-center mb-2">
-                  <p className="text-sm font-medium text-blue-800 dark:text-blue-200">
-                    {t('ia.usage_display', { today: tokenUsage.today, limit: tokenUsage.limit })} {/* <-- CAMBIO AQUÍ */}
-                  </p>
-                  {/* La línea de abajo se puede eliminar, ya que el texto de arriba es más completo */}
-                  {/* <p className="text-sm font-bold text-blue-800 dark:text-blue-200">
-                    {tokenUsage.today} / {tokenUsage.limit}
-                  </p> */}
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-3">
-                  <div
-                    className="bg-gradient-to-r from-blue-500 to-indigo-500 h-3 rounded-full transition-all duration-500"
-                    style={{
-                      width: `${Math.min((tokenUsage.today / tokenUsage.limit) * 100, 100)}%`,
-                    }}
-                  ></div>
-                </div>
-                <p className="text-xs text-blue-700 dark:text-blue-300 mt-1">
-                  {tokenUsage.today / tokenUsage.limit > 0.8 
-                    ? t('ia.near_limit') // <-- CAMBIO AQUÍ
-                    : t('ia.remaining_tokens', { remaining: tokenUsage.limit - tokenUsage.today })} {/* <-- CAMBIO AQUÍ */}
-                </p>
-              </div>
-            </div>
-
-            {/* Texto introductorio mejorado */}
-            <div className="mb-6 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
-              <p className="text-gray-700 dark:text-gray-300">
-                {t("ia.some_text")}
-              </p>
-            </div>
-
-            {/* Área de texto con botones de acción */}
-            <div className="mb-4">
-              <div className="flex justify-between items-center mb-2">
-                <label htmlFor="ia-query" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-  {t('ia.query_label')}
-</label>
-                <div className="flex space-x-2">
-                  <button
-                    onClick={() => setIaQuery('')}
-                    className="text-xs text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
-                  >
-                    {t('ia.clear')} {/* <-- CAMBIO AQUÍ: "Limpiar" por {t('ia.clear')} */}
-                  </button>
-                </div>
-              </div>
-              <textarea
-                id="ia-query"
-                value={iaQuery}
-                onChange={(e) => setIaQuery(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' && e.ctrlKey) {
-                    e.preventDefault();
-                    handleConsultarIa();
-                  }
-                }}
-                className="w-full p-4 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none transition-all duration-200"
-                placeholder={t('ia.placeholder')}
-                rows={window.innerWidth < 768 ? 6 : 10}
-              ></textarea>
-              <p className="text-xs text-gray-500 mt-1">
-                {t('ia.press_ctrl_enter')} {/* <-- CAMBIO AQUÍ: "Presiona Ctrl+Enter para enviar" por {t('ia.press_ctrl_enter')} */}
-              </p>
-            </div>
-
-            {/* Botones de acción */}
-            <div className="flex justify-between items-center">
-              <div className="text-sm text-gray-500 dark:text-gray-400">
-                {iaQuery.length} {t('ia.characters')} {/* <-- CAMBIO AQUÍ: "caracteres" por {t('ia.characters')} */}
-              </div>
-              <Button
-                onClick={handleConsultarIa}
-                variant="success"
-                className="px-6 py-2"
-                disabled={isIaLoading || !iaQuery.trim()}
-              >
-                {isIaLoading ? (
-                  <span className="flex items-center">
-                    <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    {t("ia.thinking")}
-                  </span>
-                ) : (
-                  <span className="flex items-center">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
-                    {t("ia.button")}
-                  </span>
-                )}
-              </Button>
-            </div>
-          </Card>
-
-          {/* Respuesta de IA mejorada */}
-          {iaResponse && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Card className="border-l-4 border-blue-500 bg-white dark:bg-gray-800 shadow-lg">
-                <div className="flex justify-between items-center mb-3">
-                  <h4 className="font-semibold text-blue-600 dark:text-blue-400 flex items-center">
-                    <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd"></path>
-                    </svg>
-                    {t("ia.response_title")} {/* <-- CAMBIO AQUÍ: "Respuesta de IA" por {t("ia.response_title")} */}
-                  </h4>
-                  <button
-                    onClick={() => navigator.clipboard.writeText(iaResponse)}
-                    className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
-                    title={t('ia.copy_response')} // <-- CAMBIO AQUÍ
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                    </svg>
-                  </button>
-                </div>
-                <div className="prose prose-sm max-w-none dark:prose-invert">
-                  <div className="whitespace-pre-wrap text-gray-700 dark:text-gray-300 p-4 bg-gray-50 dark:bg-gray-700/30 rounded-lg">
-                    {iaResponse}
+      case "ia":
+        return (
+          <div className="w-full px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto lg:max-w-6xl xl:max-w-7xl">
+              <div className="space-y-6">
+                <Card className="bg-white dark:bg-gray-800 shadow-lg">
+                  {/* Header con título e indicador de tokens */}
+                  <div className="border-b border-gray-200 dark:border-gray-700 pb-4 mb-4">
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                      {t('ia.title')} 
+                    </h2>
+                    
+                    {/* Indicador de uso de tokens mejorado */}
+                    <div className="p-4 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg">
+                      <div className="flex justify-between items-center mb-2">
+                        <p className="text-sm font-medium text-blue-800 dark:text-blue-200">
+                          {t('ia.usage_display', { today: tokenUsage.today, limit: tokenUsage.limit })}
+                        </p>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-3">
+                        <div
+                          className="bg-gradient-to-r from-blue-500 to-indigo-500 h-3 rounded-full transition-all duration-500"
+                          style={{
+                            width: `${Math.min((tokenUsage.today / tokenUsage.limit) * 100, 100)}%`,
+                          }}
+                        ></div>
+                      </div>
+                      <p className="text-xs text-blue-700 dark:text-blue-300 mt-1">
+                        {tokenUsage.today / tokenUsage.limit > 0.8 
+                          ? t('ia.near_limit')
+                          : t('ia.remaining_tokens', { remaining: tokenUsage.limit - tokenUsage.today })}
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="mt-3 flex justify-end">
-                  <button
-                    onClick={() => setIaQuery('')}
-                    className="text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
-                  >
-                    {t('ia.ask_another')} {/* <-- CAMBIO AQUÍ: "Hacer otra pregunta" por {t('ia.ask_another')} */}
-                  </button>
-                </div>
-              </Card>
-            </motion.div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
 
+                  {/* Texto introductorio mejorado */}
+                  <div className="mb-6 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+                    <p className="text-gray-700 dark:text-gray-300">
+                      {t("ia.some_text")}
+                    </p>
+                  </div>
+
+                  {/* Área de texto con botones de acción */}
+                  <div className="mb-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <label htmlFor="ia-query" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                        {t('ia.query_label')}
+                      </label>
+                      <div className="flex space-x-2">
+                        <button
+                          onClick={() => setIaQuery('')}
+                          className="text-xs text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                        >
+                          {t('ia.clear')}
+                        </button>
+                      </div>
+                    </div>
+                    <textarea
+                      id="ia-query"
+                      value={iaQuery}
+                      onChange={(e) => setIaQuery(e.target.value)}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' && e.ctrlKey) {
+                          e.preventDefault();
+                          handleConsultarIa();
+                        }
+                      }}
+                      className="w-full p-4 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none transition-all duration-200"
+                      placeholder={t('ia.placeholder')}
+                      rows={window.innerWidth < 768 ? 6 : 10}
+                    ></textarea>
+                    <p className="text-xs text-gray-500 mt-1">
+                      {t('ia.press_ctrl_enter')}
+                    </p>
+                  </div>
+
+                  {/* Botones de acción */}
+                  <div className="flex justify-between items-center">
+                    <div className="text-sm text-gray-500 dark:text-gray-400">
+                      {iaQuery.length} {t('ia.characters')}
+                    </div>
+                    <Button
+                      onClick={handleConsultarIa}
+                      variant="success"
+                      className="px-6 py-2"
+                      disabled={isIaLoading || !iaQuery.trim()}
+                    >
+                      {isIaLoading ? (
+                        <span className="flex items-center">
+                          <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          {t("ia.thinking")}
+                        </span>
+                      ) : (
+                        <span className="flex items-center">
+                          <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                          </svg>
+                          {t("ia.button")}
+                        </span>
+                      )}
+                    </Button>
+                  </div>
+                </Card>
+
+                {/* Respuesta de IA mejorada */}
+                {iaResponse && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Card className="border-l-4 border-blue-500 bg-white dark:bg-gray-800 shadow-lg">
+                      <div className="flex justify-between items-center mb-3">
+                        <h4 className="font-semibold text-blue-600 dark:text-blue-400 flex items-center">
+                          <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd"></path>
+                          </svg>
+                          {t("ia.response_title")}
+                        </h4>
+                        <button
+                          onClick={() => navigator.clipboard.writeText(iaResponse)}
+                          className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
+                          title={t('ia.copy_response')}
+                        >
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                          </svg>
+                        </button>
+                      </div>
+                      <div className="prose prose-sm max-w-none dark:prose-invert">
+                        <div className="whitespace-pre-wrap text-gray-700 dark:text-gray-300 p-4 bg-gray-50 dark:bg-gray-700/30 rounded-lg">
+                          {iaResponse}
+                        </div>
+                      </div>
+                      <div className="mt-3 flex justify-end">
+                        <button
+                          onClick={() => setIaQuery('')}
+                          className="text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+                        >
+                          {t('ia.ask_another')}
+                        </button>
+                      </div>
+                    </Card>
+                  </motion.div>
+                )}
+              </div>
+            </div>
+          </div>
+        );
 
       case "info":
         return (
@@ -602,6 +613,10 @@ function MainLayout() {
         return (
           <LogrosPage logEntries={logEntries} setLogEntries={setLogEntries} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} handleAddLogEntry={handleAddLogEntry} playSuccess={playSuccess} t={t} />
         );
+
+      // <-- 3. NUEVA PESTAÑA AÑADIDA
+      case "historial":
+        return <ChatHistoryPage />;
 
       default:
         return null;
