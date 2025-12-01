@@ -5,6 +5,7 @@ import { useTheme } from '../context/ThemeContext';
 import { useNavigate } from 'react-router-dom';
 import LanguageSelector from './LanguageSelector'; // <-- REVISA QUE ESTA LÍNEA SEA EXACTAMENTE ASÍ
 import Button from './ui/button';
+import Button from './ui/button';
 import { useTranslation } from 'react-i18next';
 
 function MobileMenu({ isOpen, onClose }) {
