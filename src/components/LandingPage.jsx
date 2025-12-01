@@ -55,7 +55,7 @@ const LandingPage = () => {
         {/* Contenedor superior para botones */}
         {/* <-- REEMPLAZA ESTE BLOQUE COMPLETO */}
 <div className="absolute top-4 right-4 z-10 flex items-center space-x-4">
-  <LanguageSelector className="bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white/30" />
+  <LanguageSelector className="bg-white/20 backdrop-blur-sm hover:bg-white/30" />
   
   {/* Botón de Iniciar Sesión: Solo se muestra si NO hay un usuario */}
   {!user && (

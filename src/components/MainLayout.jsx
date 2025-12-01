@@ -42,6 +42,14 @@ function MainLayout() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [tokenUsage, setTokenUsage] = useState({ today: 0, limit: DAILY_TOKEN_LIMIT });
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+  // Si hay un usuario pero aún no ha visto la intro, llévalo a la intro.
+  if (user && !hasSeenIntro) {
+    setActiveTab("introduccion");
+  }
+}, [user, hasSeenIntro]);
+
   const [showHistory, setShowHistory] = useState(false); // <-- NUEVO ESTADO
 
   const { play: playSuccess } = useSound(successSound);
@@ -630,7 +638,7 @@ function MainLayout() {
   }, [hasSeenIntro, activeTab]);
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 p-6">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <Header />
       <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
       <main className="pb-20">
@@ -641,7 +649,7 @@ function MainLayout() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.3 }}
-            className="grid gap-8"
+            className="grid gap-8 p-6"
           >
             {renderContent()}
           </motion.div>
