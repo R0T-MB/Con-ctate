@@ -7,6 +7,7 @@ import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import Button from './ui/button';
 import MobileMenu from './MobileMenu'; // <-- IMPORTAR EL NUEVO MENÚ
+import LanguageSelector from './LanguageSelector';
 
 function Header() {
   const { t } = useTranslation();
