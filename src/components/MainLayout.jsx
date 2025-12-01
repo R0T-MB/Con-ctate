@@ -17,8 +17,8 @@ import { saveUserProgress, loadUserProgress, updateTokenUsage } from '../service
 import React, { useState, useEffect, useCallback } from 'react';
 import { debounce } from 'lodash';
 import ChatHistoryPage from './ChatHistoryPage';
-import { saveChatEntry } from '../lib/chatHistory'; // <-- 1. IMPORTACIÓN AÑADIDA
-import toast from 'react-hot-toast'; // <-- 1. IMPORTACIÓN AÑADIDA
+import { saveChatEntry } from '../lib/chatHistory';
+import toast from 'react-hot-toast';
 
 // Definimos el límite diario de tokens
 const DAILY_TOKEN_LIMIT = 5000;
@@ -41,12 +41,13 @@ function MainLayout() {
   const [logEntries, setLogEntries] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [tokenUsage, setTokenUsage] = useState({ today: 0, limit: DAILY_TOKEN_LIMIT });
-  const [isLoading, setIsLoading] = useState(true); // Nuevo estado para controlar la carga inicial
+  const [isLoading, setIsLoading] = useState(true);
+  const [showHistory, setShowHistory] = useState(false); // <-- NUEVO ESTADO
 
   const { play: playSuccess } = useSound(successSound);
   const { play: playUnlock } = useSound(unlockSound);
 
-  // Función para guardar el progreso con debounce
+  // ... (el resto de tus funciones y useEffects como debounce, loadProgress, etc. permanecen igual)
   const debouncedSaveProgress = useCallback(
     debounce((userId, progressData) => {
       if (!userId) return;
@@ -57,7 +58,6 @@ function MainLayout() {
     []
   );
 
-  // useEffect para guardar el progreso automáticamente
   useEffect(() => {
     if (!user || !user.id) {
       return;
@@ -72,7 +72,6 @@ function MainLayout() {
     debouncedSaveProgress(user.id, progressData);
   }, [retos, info, logEntries, user?.id, debouncedSaveProgress]);
 
-  // Función loadProgress modificada
   const loadProgress = async () => {
     if (!user || !user.id) {
       console.error("loadProgress: No hay usuario o user.id es inválido.");
@@ -83,7 +82,6 @@ function MainLayout() {
     try {
       const result = await loadUserProgress(user.id);
       
-      // Verificamos si las claves de traducción existen antes de usarlas
       const mockDataRetos = Array.isArray(t('data.retos', { returnObjects: true })) 
         ? t('data.retos', { returnObjects: true }) 
         : [];
@@ -94,7 +92,6 @@ function MainLayout() {
       if (result.success && result.data) {
         const { retos_progress, info_data, log_entries, token_usage } = result.data;
         
-        // Lógica de fusión para retos
         let nuevosRetos;
         if (retos_progress && retos_progress.length > 0) {
           nuevosRetos = mockDataRetos.map(mockReto => {
@@ -116,7 +113,6 @@ function MainLayout() {
           nuevosRetos = mockDataRetos;
         }
 
-        // Lógica de fusión para info
         let nuevaInfo;
         if (info_data && Object.keys(info_data).length > 0) {
           nuevaInfo = mockDataInfo.map(mockItem => {
@@ -133,7 +129,6 @@ function MainLayout() {
         setInfo(nuevaInfo);
         setLogEntries(nuevosLogEntries);
 
-        // Cargamos y calculamos el uso de tokens de hoy
         const today = new Date().toISOString().split('T')[0];
         const todayUsage = token_usage?.[today] || 0;
         setTokenUsage({ today: todayUsage, limit: DAILY_TOKEN_LIMIT });
@@ -156,7 +151,6 @@ function MainLayout() {
     }
   };
 
-  // useEffect para cargar los datos cuando el usuario está listo
   useEffect(() => {
     if (user && user.id) {
       const timer = setTimeout(() => {
@@ -211,19 +205,16 @@ function MainLayout() {
     });
   };
 
-  // Función handleConsultarIa modificada
   const handleConsultarIa = async () => {
     if (!iaQuery.trim()) {
       return;
     }
 
-    // Verificamos el límite de tokens
     if (tokenUsage.today >= tokenUsage.limit) {
       setIaResponse(t('ia.limit_reached', `Has alcanzado tu límite de ${tokenUsage.limit} tokens por hoy. Por favor, vuelve mañana para seguir aprendiendo.`));
       return;
     }
 
-    // Verificamos que el usuario exista antes de proceder
     if (!user || !user.id) {
       setIaResponse(t('ia.auth_error', 'Debes iniciar sesión para usar esta función.'));
       return;
@@ -238,7 +229,6 @@ function MainLayout() {
       if (resultado.success) {
         setIaResponse(resultado.data);
 
-        // --- LÓGICA PARA GUARDAR EN EL HISTORIAL ---
         try {
           const { error } = await saveChatEntry(iaQuery, resultado.data);
           if (error) {
@@ -249,19 +239,14 @@ function MainLayout() {
           console.error("Error inesperado al guardar en el historial:", historyError);
           toast.error('Ocurrió un error inesperado al guardar la conversación.');
         }
-        // --- FIN DE LA LÓGICA AÑADIDA ---
 
-        // Actualizamos el uso de tokens
         const tokensUsed = resultado.tokenUsage?.total || 0;
         if (tokensUsed > 0) {
           try {
-            // Llamamos a la BD para guardar el uso de forma persistente
             await updateTokenUsage(user.id, tokensUsed);
-            // Actualizamos el estado local para feedback inmediato
             setTokenUsage(prev => ({ ...prev, today: prev.today + tokensUsed }));
           } catch (err) {
             console.error('Error al actualizar el uso de tokens:', err);
-            // Incluso si falla la actualización en BD, mostramos la respuesta
           }
         }
 
@@ -318,7 +303,6 @@ function MainLayout() {
   };
 
   const renderContent = () => {
-    // Mostramos un indicador de carga mientras se cargan los datos iniciales
     if (isLoading) {
       return (
         <div className="flex justify-center items-center h-64">
@@ -328,10 +312,11 @@ function MainLayout() {
     }
 
     switch (activeTab) {
+      // ... (los casos "introduccion", "retos" permanecen igual)
       case "introduccion":
+        // ... (código de introducción)
         if (hasSeenIntro) {
-          // En lugar de retornar null, redirigimos directamente a la pestaña de retos
-          return null; // El useEffect se encargará de cambiar la pestaña
+          return null;
         }
         return (
           <div className="flex justify-center">
@@ -377,7 +362,6 @@ function MainLayout() {
             </Card>
           </div>
         );
-
       case "retos":
         return (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -419,18 +403,29 @@ function MainLayout() {
             ))}
           </div>
         );
-
+      
+      // <-- MODIFICACIÓN PRINCIPAL AQUÍ
       case "ia":
         return (
           <div className="w-full px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto lg:max-w-6xl xl:max-w-7xl">
               <div className="space-y-6">
                 <Card className="bg-white dark:bg-gray-800 shadow-lg">
-                  {/* Header con título e indicador de tokens */}
+                  {/* Header con título, botón de historial e indicador de tokens */}
                   <div className="border-b border-gray-200 dark:border-gray-700 pb-4 mb-4">
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                      {t('ia.title')} 
-                    </h2>
+                    <div className="flex justify-between items-center">
+                      <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                        {t('ia.title')}
+                      </h2>
+                      {/* <-- NUEVO BOTÓN PARA VER HISTORIAL */}
+                      <Button
+                        variant="secondary"
+                        onClick={() => setShowHistory(!showHistory)}
+                        className="text-sm"
+                      >
+                        {showHistory ? '💬 Volver al Chat' : '🕐 Ver Historial'}
+                      </Button>
+                    </div>
                     
                     {/* Indicador de uso de tokens mejorado */}
                     <div className="p-4 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg">
@@ -455,125 +450,133 @@ function MainLayout() {
                     </div>
                   </div>
 
-                  {/* Texto introductorio mejorado */}
-                  <div className="mb-6 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
-                    <p className="text-gray-700 dark:text-gray-300">
-                      {t("ia.some_text")}
-                    </p>
-                  </div>
-
-                  {/* Área de texto con botones de acción */}
-                  <div className="mb-4">
-                    <div className="flex justify-between items-center mb-2">
-                      <label htmlFor="ia-query" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                        {t('ia.query_label')}
-                      </label>
-                      <div className="flex space-x-2">
-                        <button
-                          onClick={() => setIaQuery('')}
-                          className="text-xs text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
-                        >
-                          {t('ia.clear')}
-                        </button>
+                  {/* <-- RENDERIZADO CONDICIONAL */}
+                  {showHistory ? (
+                    <ChatHistoryPage />
+                  ) : (
+                    <>
+                      {/* Texto introductorio mejorado */}
+                      <div className="mb-6 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+                        <p className="text-gray-700 dark:text-gray-300">
+                          {t("ia.some_text")}
+                        </p>
                       </div>
-                    </div>
-                    <textarea
-                      id="ia-query"
-                      value={iaQuery}
-                      onChange={(e) => setIaQuery(e.target.value)}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter' && e.ctrlKey) {
-                          e.preventDefault();
-                          handleConsultarIa();
-                        }
-                      }}
-                      className="w-full p-4 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none transition-all duration-200"
-                      placeholder={t('ia.placeholder')}
-                      rows={window.innerWidth < 768 ? 6 : 10}
-                    ></textarea>
-                    <p className="text-xs text-gray-500 mt-1">
-                      {t('ia.press_ctrl_enter')}
-                    </p>
-                  </div>
 
-                  {/* Botones de acción */}
-                  <div className="flex justify-between items-center">
-                    <div className="text-sm text-gray-500 dark:text-gray-400">
-                      {iaQuery.length} {t('ia.characters')}
-                    </div>
-                    <Button
-                      onClick={handleConsultarIa}
-                      variant="success"
-                      className="px-6 py-2"
-                      disabled={isIaLoading || !iaQuery.trim()}
-                    >
-                      {isIaLoading ? (
-                        <span className="flex items-center">
-                          <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                          </svg>
-                          {t("ia.thinking")}
-                        </span>
-                      ) : (
-                        <span className="flex items-center">
-                          <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                          </svg>
-                          {t("ia.button")}
-                        </span>
-                      )}
-                    </Button>
-                  </div>
-                </Card>
-
-                {/* Respuesta de IA mejorada */}
-                {iaResponse && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <Card className="border-l-4 border-blue-500 bg-white dark:bg-gray-800 shadow-lg">
-                      <div className="flex justify-between items-center mb-3">
-                        <h4 className="font-semibold text-blue-600 dark:text-blue-400 flex items-center">
-                          <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd"></path>
-                          </svg>
-                          {t("ia.response_title")}
-                        </h4>
-                        <button
-                          onClick={() => navigator.clipboard.writeText(iaResponse)}
-                          className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
-                          title={t('ia.copy_response')}
-                        >
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                          </svg>
-                        </button>
-                      </div>
-                      <div className="prose prose-sm max-w-none dark:prose-invert">
-                        <div className="whitespace-pre-wrap text-gray-700 dark:text-gray-300 p-4 bg-gray-50 dark:bg-gray-700/30 rounded-lg">
-                          {iaResponse}
+                      {/* Área de texto con botones de acción */}
+                      <div className="mb-4">
+                        <div className="flex justify-between items-center mb-2">
+                          <label htmlFor="ia-query" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                            {t('ia.query_label')}
+                          </label>
+                          <div className="flex space-x-2">
+                            <button
+                              onClick={() => setIaQuery('')}
+                              className="text-xs text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                            >
+                              {t('ia.clear')}
+                            </button>
+                          </div>
                         </div>
+                        <textarea
+                          id="ia-query"
+                          value={iaQuery}
+                          onChange={(e) => setIaQuery(e.target.value)}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter' && e.ctrlKey) {
+                              e.preventDefault();
+                              handleConsultarIa();
+                            }
+                          }}
+                          className="w-full p-4 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none transition-all duration-200"
+                          placeholder={t('ia.placeholder')}
+                          rows={window.innerWidth < 768 ? 6 : 10}
+                        ></textarea>
+                        <p className="text-xs text-gray-500 mt-1">
+                          {t('ia.press_ctrl_enter')}
+                        </p>
                       </div>
-                      <div className="mt-3 flex justify-end">
-                        <button
-                          onClick={() => setIaQuery('')}
-                          className="text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+
+                      {/* Botones de acción */}
+                      <div className="flex justify-between items-center">
+                        <div className="text-sm text-gray-500 dark:text-gray-400">
+                          {iaQuery.length} {t('ia.characters')}
+                        </div>
+                        <Button
+                          onClick={handleConsultarIa}
+                          variant="success"
+                          className="px-6 py-2"
+                          disabled={isIaLoading || !iaQuery.trim()}
                         >
-                          {t('ia.ask_another')}
-                        </button>
+                          {isIaLoading ? (
+                            <span className="flex items-center">
+                              <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                              </svg>
+                              {t("ia.thinking")}
+                            </span>
+                          ) : (
+                            <span className="flex items-center">
+                              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                              </svg>
+                              {t("ia.button")}
+                            </span>
+                          )}
+                        </Button>
                       </div>
-                    </Card>
-                  </motion.div>
-                )}
+                    </>
+                  )}
+
+                  {/* Respuesta de IA mejorada (solo se muestra si no se muestra el historial) */}
+                  {iaResponse && !showHistory && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <Card className="border-l-4 border-blue-500 bg-white dark:bg-gray-800 shadow-lg">
+                        <div className="flex justify-between items-center mb-3">
+                          <h4 className="font-semibold text-blue-600 dark:text-blue-400 flex items-center">
+                            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd"></path>
+                            </svg>
+                            {t("ia.response_title")}
+                          </h4>
+                          <button
+                            onClick={() => navigator.clipboard.writeText(iaResponse)}
+                            className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
+                            title={t('ia.copy_response')}
+                          >
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                            </svg>
+                          </button>
+                        </div>
+                        <div className="prose prose-sm max-w-none dark:prose-invert">
+                          <div className="whitespace-pre-wrap text-gray-700 dark:text-gray-300 p-4 bg-gray-50 dark:bg-gray-700/30 rounded-lg">
+                            {iaResponse}
+                          </div>
+                        </div>
+                        <div className="mt-3 flex justify-end">
+                          <button
+                            onClick={() => setIaQuery('')}
+                            className="text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+                          >
+                            {t('ia.ask_another')}
+                          </button>
+                        </div>
+                      </Card>
+                    </motion.div>
+                  )}
+                </Card>
               </div>
             </div>
           </div>
         );
 
       case "info":
+        // ... (código de info)
         return (
           <div className="max-w-2xl mx-auto">
             <Card>
@@ -595,6 +598,7 @@ function MainLayout() {
         );
 
       case "comunidad":
+        // ... (código de comunidad)
         return (
           <div className="max-w-2xl mx-auto">
             <Card className="text-center py-12">
@@ -614,16 +618,11 @@ function MainLayout() {
           <LogrosPage logEntries={logEntries} setLogEntries={setLogEntries} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} handleAddLogEntry={handleAddLogEntry} playSuccess={playSuccess} t={t} />
         );
 
-      // <-- 3. NUEVA PESTAÑA AÑADIDA
-      case "historial":
-        return <ChatHistoryPage />;
-
       default:
         return null;
     }
   };
 
-  // Efecto para manejar el caso en que hasSeenIntro es true
   useEffect(() => {
     if (hasSeenIntro && activeTab === "introduccion") {
       setActiveTab("retos");
