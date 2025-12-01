@@ -3,9 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
 import { useNavigate } from 'react-router-dom';
-import LanguageSelector from './LanguageSelector'; // <-- REVISA QUE ESTA LÍNEA SEA EXACTAMENTE ASÍ
-import Button from './ui/button';
-import Button from './ui/button';
+import LanguageSelector from './LanguageSelector'; // <-- Importación correcta
+import Button from './ui/button'; // <-- Importación correcta (solo una vez)
 import { useTranslation } from 'react-i18next';
 
 function MobileMenu({ isOpen, onClose }) {
